@@ -159,7 +159,7 @@ header {
 
 .bienvenida__texto {
 	position: relative;
-	top: -4%;
+	top: -3%;
 	padding: 6%;
 	display: inline-block;
 	height: 100%;
@@ -181,7 +181,7 @@ header {
 }
 
 .bienvenida__imagen {
-	padding: 2%;
+	padding: 3%;
 	display: inline-block;
 	height: 100%;
 	width: 51%;
