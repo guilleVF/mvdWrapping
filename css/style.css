@@ -6,7 +6,7 @@ body {
 	background-color: rgba(230, 230, 230, 1.0);
 }
 
-									/*CSS para Header*/
+									/*Header*/
 
 
 header {
@@ -86,10 +86,10 @@ header {
 }
 
 
-								/*CSS Para body*/
+								/*Body*/
 
 
-/*Portada*/
+/*IndexPortada*/
 
 .portada {
 	position: relative;
@@ -116,18 +116,11 @@ header {
 	height: 100%;
 }
 
-/*.portada__logo {
-	position: relative;
-	width: 320px;
-	left: 22%;
-	top: 35%;
-}*/
-
 .portada__texto h3 {
 	width: 70%;
 	position: relative;
 	top: 19%;
-	left: 25%;
+	left: 27%;
 	font-size: 50px;
 	color: rgb(230, 230, 230);
 	font-weight: 600;
@@ -150,7 +143,7 @@ header {
 
 
 
-/*Bienvenida*/
+/*IndexBienvenida*/
 
 .bienvenida {
 	width: 100%;
@@ -193,7 +186,7 @@ header {
 }
 
 
-/*Video*/
+/*IndexVideo*/
 
 .video video {
 	position: relative;
@@ -204,13 +197,13 @@ header {
 }
 
 
-/*Recuadros Clientes*/
+/*IndexClientes*/
 
 .opiniones {
 	/*background-color: rgba(230, 230, 230, 1.0);*/
 	/*background-color: rgba(50, 50, 50, 1.0);*/
 	width: 100%;
-	height: 95vh;
+	height: 90vh;
 	text-align: center;
 	overflow: hidden;
 	padding: 0.5%;
@@ -253,7 +246,7 @@ header {
 	border-radius: 4%;
 	display: inline-block;
 	width: 17%;
-	height: 70%;
+	height: 60%;
 	text-align: left;
 	box-shadow: 8px 8px 5px gray;
 }
@@ -268,7 +261,7 @@ footer {
 	background-color: rgba(0, 200, 200, 0.5);
 	width: 100%;
 	height: 15vh;
-	box-shadow: 0px -10px 2px rgba(0, 200, 200, 0.5);
+	box-shadow: 0px -10px 3px rgba(0, 200, 200, 0.5);
 }
 
 .footer__logo {
@@ -287,7 +280,6 @@ footer {
 	position: absolute;
 	left: 87.2%;
 	top: 55%;
-
 }
 
 .footer__direccion {
