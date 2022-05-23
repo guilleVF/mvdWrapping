@@ -5,6 +5,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Portfolio - Montevideo Wrapping</title>
+	<link rel="icon" type="image/icon type" href="../img/logo.png">
+	
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">	
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/mediaqueries.css">	
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Questrial&display=swap" rel="stylesheet">
+
+	
 
 </head>
 
@@ -12,75 +22,90 @@
 <body>
 
 	<header>
-		<a href="../index.html"><img src="../img/logo.jpg" width="100px"></a>
-		<div class="contacto-header">
-			<a href="https://www.facebook.com/mvdwrapping"><img src="../img/facebook.png" width="25vw"></a>
-			<a href="https://www.instagram.com/mvdwrapping"><img src="../img/instagram.png" width="25vw"></a>
-			<a href="https://www.twitter.com/mvdwrapping"><img src="../img/twitter.png" width="25vw"></a>
-			<br>
-			<img src="../img/phone.png" width="15vw" align="left">
-			<b>2345-6789</b> 
+		<div class="header__logo">
+			<a href="../index.html"><img src="../img/logo.png"></a>
 		</div>
-		<nav>
-			<ul>
-				<li><a href="../index.html">HOME</a></li>
-				<li><a href="../pages/servicios.html">SERVICIOS</a></li>
-				<li><a href="../pages/portfolio.html">PORTFOLIO</a></li>
-				<li><a href="../pages/clientes.html">CLIENTES</a></li>
-				<li><a href="../pages/contacto.html">CONTACTO</a></li>
-			</ul>
-		</nav>
+		<div class="header__contenedor">
+			<div class="header__contacto">
+				<a href="https://www.facebook.com/Montevideo-Wrapping-101535734986228" target="__blank"><img class="img__redes" src="../img/facebook2.png"></a>
+				<a href="https://www.instagram.com/montevideowrapping" target="__blank"><img class="img__redes" src="../img/instagram2.png"></a>
+				<img class="img__phone" src="../img/phone2.png">
+				<p>092 488 728</p>
+			</div>
+			<input type="checkbox" id="nav-toggle" class="nav-toggle">
+			<nav class="header__menu">
+				<ul>
+					<li><a href="../index.html">HOME</a></li>
+					<li><a href="../pages/servicios.html">SERVICIOS</a></li>
+					<li><a href="../pages/portfolio.html">PORTFOLIO</a></li>
+					<li><a href="../pages/clientes.html">CLIENTES</a></li>
+					<li><a href="../pages/contacto.html">CONTACTO</a></li>
+				</ul>
+			</nav>
+			<label for="nav-toggle" class="nav-toggle-label">
+				<span></span>
+			</label>
+		</div>		
 	</header>
 
-	<hr>
 
 	<main>
 
 		<!-- Galería de fotos de trabajos previos divididos por categoría -->
-		<section id="servicio-wraps">
-			<h2>Wraps</h2>
-			<img src="../img/portfolio/finished-wrap1.jpg" width="500px">
-			<img src="../img/portfolio/finished-wrap2.jpg" width="500px">
-			<img src="../img/portfolio/finished-wrap3.jpg" width="500px">
-			<img src="../img/portfolio/finished-wrap4.jpg" width="500px">
-		</section>			
+		<div class="contenedor-portfolios">
+			<section class="portfolios portfolios__wraps">
+				<div class="portfolio__galeria">
+					<h2>Wraps</h2>
+					<img src="../img/portfolio/finished-wrap1.jpg">
+					<img src="../img/portfolio/finished-wrap2.jpg">
+					<img src="../img/portfolio/finished-wrap3.jpg">
+					<img src="../img/portfolio/finished-wrap4.jpg">
+				</div>
+			</section>			
 
-		<section id="servicio-polarizado">
-			<h2>Polarizados</h2>
-			<img src="../img/portfolio/finished-pol1.jpg" width="500px">
-			<img src="../img/portfolio/finished-pol2.jpg" width="500px">
-			<img src="../img/portfolio/finished-pol3.jpg" width="500px">
-			<img src="../img/portfolio/finished-pol4.jpg" width="500px">
-		</section>			
+			<section class="portfolios portfolios__ppf">
+				<div class="portfolio__galeria">
+					<h2>PPF</h2>
+					<img src="../img/portfolio/finished-ppf1.jpg">
+					<img src="../img/portfolio/finished-ppf2.jpg">
+					<img src="../img/portfolio/finished-ppf3.jpg">
+					<img src="../img/portfolio/finished-ppf4.jpg">
+				</div>
+			</section>	
 
-		<section id="servicio-ppf">
-			<h2>PPF</h2>
-			<img src="../img/portfolio/finished-ppf1.jpg" width="500px">
-			<img src="../img/portfolio/finished-ppf2.jpg" width="500px">
-			<img src="../img/portfolio/finished-ppf3.jpg" width="500px">
-			<img src="../img/portfolio/finished-ppf4.jpg" width="500px">
-		</section>			
+			<section class="portfolios portfolios__pol">
+					<div class="portfolio__galeria">
+					<h2>Polarizados</h2>
+					<img src="../img/portfolio/finished-pol1.jpg">
+					<img src="../img/portfolio/finished-pol2.jpg">
+					<img src="../img/portfolio/finished-pol3.jpg">
+					<img src="../img/portfolio/finished-pol4.jpg">
+				</div>	
+			</section>
+		</div>				
 
 
 	</main>
 
-	<hr>
 
 	<footer>
-		<ul>
-			<li><a href="../pages/servicios.html">SERVICIOS</a></li>
-			<li><a href="../pages/portfolio.html">PORTFOLIO</a></li>
-			<li><a href="../pages/clientes.html">CLIENTES</a></li>
-			<li><a href="../pages/contacto.html">CONTACTO</a></li>
-		</ul>
-		<a href="../index.html"><img src="../img/logo.jpg" width="50px"></a>
-		<div class="contacto-footer">
-			<a href="https://www.facebook.com/mvdwrapping"><img src="../img/facebook.png" width="25vw"></a>
-			<a href="https://www.instagram.com/mvdwrapping"><img src="../img/instagram.png" width="25vw"></a>
-			<a href="https://www.twitter.com/mvdwrapping"><img src="../img/twitter.png" width="25vw"></a>
-			<p>18 de Julio 1234 - Montevideo, Uruguay</p>
-			<img src="../img/phone.png" width="15vw">
-			<b>2345-6789</b>
+		<div class="footer__logo">
+			<a href="../index.html"><img src="../img/logo3.png"></a>
+		</div>
+
+		<div class="footer__contenedor">
+			<div class="footer__redes">
+				<a href="https://www.facebook.com/Montevideo-Wrapping-101535734986228" target="__blank"><img class="img__redes" src="../img/facebook.png"></a>
+				<a href="https://www.instagram.com/montevideowrapping" target="__blank"><img class="img__redes " src="../img/instagram.png"></a>
+			</div>
+		
+			<div class="footer__direccion">
+				<p>Zelmar Michelini 1077 - Montevideo, Uruguay</p>
+			</div>
+			<div class="footer__telefono">
+				<img class="img__phone" src="../img/phone.png" width="12vw">
+				<p>092 488 728</p>
+			</div>
 		</div>	
 	</footer>
 

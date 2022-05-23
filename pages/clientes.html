@@ -4,10 +4,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Clientes - Montevideo Wrapping</title>
-	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">	
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@300&family=Tomorrow:wght@200&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/mediaqueries.css">	
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Questrial&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
 	<header>
@@ -16,90 +22,109 @@
 		</div>
 		<div class="header__contenedor">
 			<div class="header__contacto">
-				<div class="contacto__redes">
-					<a href="https://www.facebook.com/mvdwrapping"><img src="../img/facebook2.png" width="25vw"></a>
-					<a href="https://www.instagram.com/mvdwrapping"><img src="../img/instagram2.png" width="25vw"></a>
-				</div>
-				<div class="contacto__phone">
-					<img src="../img/phone2.png" width="15vw">
-					<p>2345-6789</p>
-				</div>	 
+				<a href="https://www.facebook.com/Montevideo-Wrapping-101535734986228" target="__blank"><img class="img__redes" src="../img/facebook2.png"></a>
+				<a href="https://www.instagram.com/montevideowrapping" target="__blank"><img class="img__redes" src="../img/instagram2.png"></a>
+				<img class="img__phone" src="../img/phone2.png">
+				<p>092 488 728</p>
 			</div>
-			<nav>
-				<ul class="header__menu">
-					<li class="menu__item"><a href="../index.html">HOME</a></li>
-					<li class="menu__item"><a href="../pages/servicios.html">SERVICIOS</a></li>
-					<li class="menu__item"><a href="../pages/portfolio.html">PORTFOLIO</a></li>
-					<li class="menu__item"><a href="../pages/clientes.html">CLIENTES</a></li>
-					<li class="menu__item"><a href="../pages/contacto.html">CONTACTO</a></li>
+			<input type="checkbox" id="nav-toggle" class="nav-toggle">
+			<nav class="header__menu">
+				<ul>
+					<li><a href="../index.html">HOME</a></li>
+					<li><a href="../pages/servicios.html">SERVICIOS</a></li>
+					<li><a href="../pages/portfolio.html">PORTFOLIO</a></li>
+					<li><a href="../pages/clientes.html">CLIENTES</a></li>
+					<li><a href="../pages/contacto.html">CONTACTO</a></li>
 				</ul>
 			</nav>
+			<label for="nav-toggle" class="nav-toggle-label">
+				<span></span>
+			</label>
 		</div>		
 	</header>
-
-	<hr>
 
 	<main>
 
 		<!-- Logos de marcas de clientes anteriores -->
-		<section id="clientes-logos">	
-			<h1>Marcas que confían en nuestro trabajo</h1>
+		<section class="clientes clientes__marcas">	
+			<h2>Marcas que confían en nuestro trabajo</h2>
 
-			<img src="../img/clientes/farmashop.png" width="200px">
-			<img src="../img/clientes/husqvarna.jpg"width="200px">
-			<img src="../img/clientes/ktm.jpg" width="200px">
-			<img src="../img/clientes/medica2.jpg" width="200px">
-			<img src="../img/clientes/oca.png" width="200px">
-			<img src="../img/clientes/stadium.png" width="200px">
+			<div class="clientes__logos">
+				<img src="../img/clientes/logo1.png">
+				<img src="../img/clientes/logo2.png">
+				<img src="../img/clientes/logo4.png">
+				<img src="../img/clientes/logo8.png">
+				<img src="../img/clientes/logo5.png">
+				<img src="../img/clientes/logo6.png">
+				<img src="../img/clientes/logo7.png">
+				<img src="../img/clientes/logo3.png">
+			</div>
 
 		</section>
 
 		<!-- Opiniones de clientes anteriores -->
-		<section id="recuadros-clientes">
-			<h3>Nuestros Clientes</h3>
-			<div class="recuadro-cliente">
-				<img src="../img/clientes/cliente.png" width="35px">
-				<p>Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<section class="opiniones">
+			<h2>Que opinan nuestros clientes?</h2>
+			<div class="opiniones__recuadro">
+				<div class="recuadro__arriba">
+					<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat."</p>	
+				</div>
+				<div class="recuadro__abajo">
+					<img src="../img/clientes/cliente.png" width="60px">
+					<p class="nombre">Javier Mieres</p>
+					<p class="vehiculo">Honda Civic</p>
+				</div>
 			</div>
-			<div class="recuadro-cliente">
-				<img src="../img/clientes/cliente.png" width="35px">
-				<p>Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div class="opiniones__recuadro">
+				<div class="recuadro__arriba">
+					<p>"Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum labore 	et dolore magna."</p>
+				</div>
+				<div class="recuadro__abajo">
+					<img src="../img/clientes/cliente.png" width="60px">
+					<p class="nombre">Ignacio Benitez</p>
+					<p class="vehiculo">Ducati Scrambler</p>
+				</div>
 			</div>
-			<div class="recuadro-cliente">
-				<img src="../img/clientes/cliente.png" width="35px">
-				<p>Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="recuadro-cliente">
-				<img src="../img/clientes/cliente.png" width="35px">
-				<p>Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div class="opiniones__recuadro">
+				<div class="recuadro__arriba">
+					<p>"Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
+				</div>
+				<div class="recuadro__abajo">
+					<img src="../img/clientes/cliente.png" width="60px">
+					<p class="nombre">Sofía Sosa</p>
+					<p class="vehiculo">VW Polo</p>
+				</div>
+				
 			</div>
 		</section>
 
 	</main>
 
-	<hr>
-
 	<footer>
-		<ul>
-			<li><a href="../pages/servicios.html">SERVICIOS</a></li>
-			<li><a href="../pages/portfolio.html">PORTFOLIO</a></li>
-			<li><a href="../pages/clientes.html">CLIENTES</a></li>
-			<li><a href="../pages/contacto.html">CONTACTO</a></li>
-		</ul>
-		<a href="../index.html"><img src="../img/logo.jpg" width="50px"></a>
-		<div class="contacto-footer">
-			<a href="https://www.facebook.com/mvdwrapping"><img src="../img/facebook.png" width="25vw"></a>
-			<a href="https://www.instagram.com/mvdwrapping"><img src="../img/instagram.png" width="25vw"></a>
-			<a href="https://www.twitter.com/mvdwrapping"><img src="../img/twitter.png" width="25vw"></a>
-			<p>18 de Julio 1234 - Montevideo, Uruguay</p>
-			<img src="../img/phone.png" width="15vw">
-			<b>2345-6789</b>
+		<div class="footer__logo">
+			<a href="../index.html"><img src="../img/logo3.png"></a>
+		</div>
+
+		<div class="footer__contenedor">
+			<div class="footer__redes">
+				<a href="https://www.facebook.com/Montevideo-Wrapping-101535734986228" target="__blank"><img class="img__redes" src="../img/facebook.png"></a>
+				<a href="https://www.instagram.com/montevideowrapping" target="__blank"><img class="img__redes " src="../img/instagram.png"></a>
+			</div>
+		
+			<div class="footer__direccion">
+				<p>Zelmar Michelini 1077 - Montevideo, Uruguay</p>
+			</div>
+			<div class="footer__telefono">
+				<img class="img__phone" src="../img/phone.png" width="12vw">
+				<p>092 488 728</p>
+			</div>
 		</div>	
-	</footer>	
+	</footer>
 
 </body>
 </html>

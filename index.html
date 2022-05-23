@@ -5,11 +5,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Montevideo Wrapping</title>
+	<link rel="icon" type="image/icon type" href="./img/logo.png">
+	
 	<link rel="stylesheet" type="text/css" href="./css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@300&family=Tomorrow:wght@200&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@300&family=Tomorrow:wght@200&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Orelega+One&family=Roboto:wght@300&family=Tomorrow:wght@200&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./css/mediaqueries.css">
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Questrial&display=swap" rel="stylesheet">
 
 </head>
 
@@ -22,24 +26,24 @@
 		</div>
 		<div class="header__contenedor">
 			<div class="header__contacto">
-				<div class="contacto__redes">
-					<a href="https://www.facebook.com/mvdwrapping"><img src="./img/facebook2.png" width="25vw"></a>
-					<a href="https://www.instagram.com/mvdwrapping"><img src="./img/instagram2.png" width="25vw"></a>
-				</div>
-				<div class="contacto__phone">
-					<img src="./img/phone2.png" width="15vw">
-					<p>2345-6789</p>
-				</div>	 
+				<a href="https://www.facebook.com/Montevideo-Wrapping-101535734986228" target="__blank"><img class="img__redes" src="./img/facebook2.png"></a>
+				<a href="https://www.instagram.com/montevideowrapping" target="__blank"><img class="img__redes" src="./img/instagram2.png"></a>
+				<img class="img__phone" src="./img/phone2.png">
+				<p>092 488 728</p>
 			</div>
-			<nav>
-				<ul class="header__menu">
-					<li class="menu__item"><a href="./index.html">HOME</a></li>
-					<li class="menu__item"><a href="./pages/servicios.html">SERVICIOS</a></li>
-					<li class="menu__item"><a href="./pages/portfolio.html">PORTFOLIO</a></li>
-					<li class="menu__item"><a href="./pages/clientes.html">CLIENTES</a></li>
-					<li class="menu__item"><a href="./pages/contacto.html">CONTACTO</a></li>
+			<input type="checkbox" id="nav-toggle" class="nav-toggle">
+			<nav class="header__menu">
+				<ul>
+					<li><a href="./index.html">HOME</a></li>
+					<li><a href="./pages/servicios.html">SERVICIOS</a></li>
+					<li><a href="./pages/portfolio.html">PORTFOLIO</a></li>
+					<li><a href="./pages/clientes.html">CLIENTES</a></li>
+					<li><a href="./pages/contacto.html">CONTACTO</a></li>
 				</ul>
 			</nav>
+			<label for="nav-toggle" class="nav-toggle-label">
+				<span></span>
+			</label>
 		</div>		
 	</header>
 
@@ -52,30 +56,28 @@
 			<div class="portada__imagen">
 				<img src="./img/front.jpg">
 			</div>
-			<div class="portada__texto">
-= 				<h3>MONTEVIDEO WRAPPING</h3>
+			<div class="portada__logo">
+				<img src="./img/logo4w.png">
+			</div>
+<!-- 			<div class="portada__texto">
+ 				<h3>MONTEVIDEO WRAPPING</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-			</div>
+			</div> -->
 		</section>
 
 		<!-- Imagen de personal trabajando con una breve bienvenida -->
 		<section class="bienvenida">
 			<div class="bienvenida__texto">
 				<h1>Bienvenidos a <br><span>Montevideo Wrapping</span></h1>
-				<p><b>Lorem ipsum dolor  amet</b>, consecteadipisicing elit, sed do eiusmod
+				<p>Lorem ipsum dolor  amet, consecteadipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 			<div class="bienvenida__imagen">
 				<img src="./img/bienvenida.jpg">
@@ -83,7 +85,7 @@
 		</section>
 
 		<div class="video">
-			<video width="1920" height="720" autoplay muted>
+			<video autoplay muted loop>
 				<source src="./img/loop.mp4" type="video/mp4">
 			</video>
 		</div>
@@ -92,30 +94,44 @@
 		<!-- Ver posibilidad de colocar video en loop, tomas cercanas trabajando, cambios rapidos de camara, no mas de 20 segundos. -->
 
 		<!-- Recuadros con opiniones de clientes satisfechos -->
+		
 		<section class="opiniones">
-			<h2>Que opinan nuestros clientes?</h2>
-			<div class="opiniones__cliente">
-				<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat."</p>
-				<img src="./img/clientes/cliente.png" width="60px">
-				<h3>Pepe Grillo</h3>
-				<h6>Honda Civic</h6>
+			<h2>Que opinan nuestros <span>clientes</span>?</h2>
+			<div class="opiniones__recuadro">
+				<div class="recuadro__arriba">
+					<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat."</p>	
+				</div>
+				<div class="recuadro__abajo">
+					<img src="./img/clientes/cliente.png" width="60px">
+					<p class="nombre">Javier Mieres</p>
+					<p class="vehiculo">Honda Civic</p>
+				</div>
 			</div>
-			<div class="opiniones__cliente">
-				<p>"Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum labore et dolore magna."</p>
-				<img src="./img/clientes/cliente.png" width="60px">
-				<h3>Aquiles Vaesa</h3>
-				<h6>Ducati Scrambler</h6>
+			<div class="opiniones__recuadro">
+				<div class="recuadro__arriba">
+					<p>"Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum labore 	et dolore magna."</p>
+				</div>
+				<div class="recuadro__abajo">
+					<img src="./img/clientes/cliente.png" width="60px">
+					<p class="nombre">Ignacio Benitez</p>
+					<p class="vehiculo">Ducati Scrambler</p>
+				</div>
 			</div>
-			<div class="opiniones__cliente">
-				<p>"Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
-				<img src="./img/clientes/cliente.png" width="60px">
-				<h3>Juancho Tacorta</h3>
-				<h6>VW Polo</h6>
+			<div class="opiniones__recuadro">
+				<div class="recuadro__arriba">
+					<p>"Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
+				</div>
+				<div class="recuadro__abajo">
+					<img src="./img/clientes/cliente.png" width="60px">
+					<p class="nombre">Sofía Sosa</p>
+					<p class="vehiculo">VW Polo</p>
+				</div>
+				
 			</div>
 		</section>
 	</main>
@@ -125,20 +141,20 @@
 		<div class="footer__logo">
 			<a href="./index.html"><img src="./img/logo3.png"></a>
 		</div>
-		<div class="footer__redes">
-			<a href="https://www.facebook.com/mvdwrapping"><img src="./img/facebook.png" width="25vw"></a>
-			<a href="https://www.instagram.com/mvdwrapping"><img src="./img/instagram.png" width="25vw"></a>
-		</div>
-		<div class="footer__direccion">
-			<p>18 de Julio 1234 - Montevideo, Uruguay</p>
-		</div>
-		<div class="footer__telefono">
-			<img src="./img/phone.png" width="12vw">
-			<b>2345-6789</b>
-		</div>
-		<div class="footer__derechos">
-			<p>© 2022 Guillermo Velázquez | Todos los derechos reservados.</p>
-		</div>
+		<div class="footer__contenedor">
+			<div class="footer__redes">
+				<a href="https://www.facebook.com/Montevideo-Wrapping-101535734986228" target="__blank"><img class="img__redes" src="./img/facebook.png"></a>
+				<a href="https://www.instagram.com/montevideowrapping" target="__blank"><img class="img__redes " src="./img/instagram.png"></a>
+			</div>
+		
+			<div class="footer__direccion">
+				<p>Zelmar Michelini 1077 - Montevideo, Uruguay</p>
+			</div>
+			<div class="footer__telefono">
+				<img class="img__phone" src="./img/phone.png" width="12vw">
+				<p>092 488 728</p>
+			</div>
+		</div>	
 	</footer>
 
 </body>
