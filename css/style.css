@@ -31,9 +31,10 @@ a {
 	text-decoration: none;
 }
 
-a:visited {
+/*a:visited {
 	color: black;
-}
+}*/
+
 
 
 ul {
@@ -115,7 +116,7 @@ header p {
 .header__menu li {
 	margin-block: 20px;
 	margin-right: 15px;
-	font-size: 30px;
+	font-size: 27px;
 	font-weight: 400;
 	/*backdrop-filter: blur(2px);*/
 }
