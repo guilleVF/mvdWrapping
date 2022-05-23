@@ -383,7 +383,7 @@ footer {
 }
 
 .servicios .imagen {
-	max-width: 80%;
+	max-width: 90%;
 }
 
 
@@ -418,8 +418,13 @@ footer {
 }
 
 .portfolio__galeria img {
+	transition: all 0.3s;
 	margin-bottom: 20px;
 	border-radius: 7px;
+}
+
+.portfolio__galeria img:hover {
+	transform: scale(1.5);
 }
 
 
