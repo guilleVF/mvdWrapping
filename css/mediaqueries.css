@@ -1,5 +1,11 @@
 
-
+:root {
+	--color-text: #143642;
+	--color-primary: #81D8D0;
+	--color-primary-strong: #0abab5;
+	--color-accent: #3F6C51;
+	--color-background: #f7fcf8;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -40,6 +46,7 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
+	padding-block: 4rem;
 }
 
 .opiniones h2 {
@@ -49,10 +56,7 @@
 }
 
 
-.opiniones__recuadro {
-	max-width: 30rem;
-	height: 45rem;
-}
+.opiniones__recuadro { max-width: 30rem; height: 42rem; }
 
 
 
@@ -63,6 +67,7 @@
 
 .servicios {
 	grid-template-columns: 1fr 1fr;
+
 }
 
 .servicios__ppf .texto {
@@ -142,7 +147,6 @@
 
 
 
-
 /*----------------------
        CONTACTO        
 ------------------------*/
@@ -150,7 +154,6 @@
 .contacto__infoForm {
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
-	/*grid-gap: 5px;*/
 }
 
 .contacto__infoForm h2 {
@@ -169,7 +172,7 @@
 
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
 	
 
 /*----------------
@@ -241,8 +244,7 @@ header {
 }
 
 .header__menu a:hover {
-	/*color: #cfd4d0;*/
-	color: #0abab5;
+	color: var(--color-primary);
 	text-shadow: 1px 1px 2px grey;
 	transition: all 0.2s;
 }
@@ -251,7 +253,7 @@ header {
 	content: "";
 	width: 0%;
 	height: 3px;
-	background-color: #cfd4d0;
+	background-color: var(--color-background);
 	transition: all 0.2s ease;
 	border-radius: 7px;
 }
@@ -287,10 +289,52 @@ footer {
 	height: 12vh;
 }
 
-/*----------------
-      INDEX    
- -----------------*/
+
+/*----------------------
+         INDEX        
+------------------------*/
+.bienvenida{
+	padding-block: 12rem;
+	padding-inline: 15rem;
+}
+.opiniones{
+	padding-inline: 8rem;
+}
+
+/*----------------------
+       SERVICIOS        
+------------------------*/
+.servicios{
+	padding-block: 5rem;
+	padding-inline: 8rem;
+}
+
+/*----------------------
+       PORTFOLIOS        
+------------------------*/
+.contenedor-portfolios{
+	padding-inline: 8rem;
+}
+
+.portfolios {
+	padding-block: 2rem;
+}
 
 
+/*----------------------
+       CLIENTES        
+------------------------*/
+.clientes__marcas {
+	padding-inline: 8rem;
+}
 
- }
+
+/*----------------------
+       CONTACTO        
+------------------------*/
+.contacto__infoForm {
+	padding-inline: 8rem;
+}
+
+
+}
