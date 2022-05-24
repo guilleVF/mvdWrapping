@@ -1,7 +1,8 @@
 
 html {
-	font-family: "Questrial", sans-serif;
+	font-family: "Overpass", sans-serif;
 	background-color: #f7fcf8;
+	font-size: 10px;
 }
 
 h1,
@@ -9,6 +10,8 @@ h2 {
 	font-size: 35px;
 	display: inline-block;
 	color: #143642;
+	font-family: "Rubik", sans-serif;
+	letter-spacing: ;
 }
 
 h2::before {
@@ -22,19 +25,18 @@ h2::before {
 
 p, 
 b {
-	font-size: 17px;
-	line-height: 1.3;
-	color: #1F1F1F
+	font-size: 1.6rem;
+	line-height: 1.5;
+	color: #143642;
 }
 
 a {
 	text-decoration: none;
 }
 
-/*a:visited {
-	color: black;
-}*/
-
+form {
+	font-size: 1.2rem;
+}
 
 
 ul {
@@ -104,7 +106,7 @@ header p {
 	width: 100%;
 	top: 100%;
 	right: 0%;
-	background-color: rgba(0, 0, 0, 0.4); 
+	background-color: rgba(0, 0, 0, 0.4);
 
 }
 
@@ -114,15 +116,16 @@ header p {
 }
 
 .header__menu li {
-	margin-block: 20px;
+	margin-block: 1.6rem;
 	margin-right: 15px;
 	font-size: 27px;
-	font-weight: 400;
+	font-weight: 200;
+	font-family: "Rubik",sans-serif;
 }
 
 .header__menu a {
 	color: #f7fcf8;
-	text-shadow: 2px 2px #555555;
+	text-shadow: 2px 2px 2px #555555;
 }
 
 /*Menu hamburguesa*/
@@ -145,7 +148,7 @@ header p {
 	display: block;
 	background: white;
 	height: 2px;
-	width: 2.6em;
+	width: 3.5rem;
 	border-radius: 2px;
 	position: relative;
 }
@@ -174,14 +177,13 @@ header p {
 
 
 footer {
-	height: 15vh;
+	height: 8rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1%;
 	padding-inline: 5%;
 	margin-top: 4%;
-	/*background-color: #0abab5;*/
 	background-color: #81D8D0;
 }
 
@@ -201,7 +203,7 @@ footer {
 }
 
 .footer__redes .img__redes {
-	max-width: 2.0em;
+	max-width: 2.3rem;
 	margin-inline: 4px;
 }
 
@@ -276,8 +278,9 @@ footer {
 
 
 .bienvenida__texto span {
+	font-size: 4.6rem;
 	color: #0abab5;
-	text-shadow: 2px 2px #555555;
+	
 }
 
 .bienvenida__imagen img {
@@ -311,8 +314,7 @@ footer {
 }
 
 .opiniones h2 span {
-	color: #0abab5;
-	text-shadow: 2px 2px #555555;	
+	color: #0abab5;	
 }
 
 
@@ -499,6 +501,10 @@ footer {
 	margin-bottom: 50px;
 }
 
+
+.contacto__form input {
+	max-width: 100%;
+}
 
 .contacto__form .email {
 	grid-column: 2 / 7;
