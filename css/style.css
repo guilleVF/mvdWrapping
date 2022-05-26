@@ -7,10 +7,36 @@
 	--color-background: #f7fcf8;
 }
 
+
+@keyframes fadeInFull {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+@keyframes fadeInPartial {
+    0% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+
 html {
 	font-family: "Overpass", sans-serif;
 	background-color: var(--color-background);
 	font-size: 10px;
+}
+
+main {
+	animation: fadeInPartial ease 1s;
+       animation-iteration-count: 1;
+  	animation-fill-mode: forwards;
 }
 
 h1,
@@ -268,6 +294,9 @@ footer {
 	transform: translate(-50%, -50%);
 	z-index: 998;
 	max-width: 50%;
+	animation: fadeInFull ease 3s;
+       animation-iteration-count: 1;
+  	animation-fill-mode: forwards;	
 }
 
 
