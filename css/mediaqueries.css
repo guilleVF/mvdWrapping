@@ -243,13 +243,12 @@ header {
 
 .header__menu a:hover {
 	color: var(--color-primary);
-	text-shadow: 1px 1px 2px grey;
 	transition: all 0.2s;
 }
 
 .header__menu li::before {
 	content: "";
-	margin-bottom: 0.3rem;
+	margin-bottom: 0.5rem;
 	width: 0%;
 	height: 1px;
 	background-color: var(--color-background);
@@ -258,7 +257,8 @@ header {
 }
 
 .header__menu li:hover::before {
-	width: 100%;
+	width: 90%;
+	margin-inline: auto;
 }
 
 

@@ -125,13 +125,17 @@ header p {
 	margin-right: 15px;
 	font-size: 2.5rem;
 	font-weight: bold;
-	letter-spacing: 0.25rem;
+	letter-spacing: 0.2rem;
 	font-family: "Overpass";
 }
 
 .header__menu a {
 	color: var(--color-background);
-	text-shadow: 2px 2px 2px #555555;
+}
+
+.header__menu a:focus {
+	color: var(--color-primary);
+	transition: all 0.2s;
 }
 
 /*Menu hamburguesa*/
@@ -145,7 +149,8 @@ header p {
 	right: 18px;
 	height: 100%;
 	display: flex;
-	align-items: center;	
+	align-items: center;
+	cursor: pointer;
 }
 
 .nav-toggle-label span,
@@ -331,7 +336,9 @@ footer {
 	margin-bottom: 20px;
 	margin-inline: 10px;
 	padding: 7%;
-	background-color: rgba(0, 0, 0, 0.1);
+	/*background-color: rgba(0, 0, 0, 0.1);*/
+	/*background-color: #f3fbf4;*/
+	background-color: #f1f9f9;
 	box-shadow: 8px 8px 5px gray;
 	border-radius: 3%;
 	max-width: 80%;
