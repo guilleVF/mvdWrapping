@@ -1,12 +1,18 @@
 
 :root {
-	--color-text: #143642;
 	--color-primary: #81D8D0;
 	--color-primary-strong: #0abab5;
-	--color-accent: #3F6C51;
+	--color-text: #143642;
 	--color-background: #f7fcf8;
 }
 
+/*:root {
+	--color-primary: #81D8D0;
+	--color-primary-strong: #0abab5;
+	--color-text: #ffffff;
+	--color-text-p: #bebebe;
+	--color-background: #2e2f36;
+}*/
 
 @keyframes fadeInFull {
     0% {
@@ -29,19 +35,26 @@
 
 html {
 	font-family: "Overpass", sans-serif;
+	/*background-image: linear-gradient(30deg, var(--color-background), lightgrey);*/
 	background-color: var(--color-background);
 	font-size: 10px;
+}
+
+body {
+	min-height: 100vh;
+	position: relative;
 }
 
 main {
 	animation: fadeInPartial ease 1s;
        animation-iteration-count: 1;
   	animation-fill-mode: forwards;
+  	padding-bottom: 10rem;
 }
 
 h1,
 h2 {
-	font-size: 35px;
+	font-size: 3.5rem;
 	display: inline-block;
 	color: var(--color-text);
 	font-family: "Rubik", sans-serif;
@@ -104,7 +117,9 @@ header {
 	justify-content: space-between;
 	height: 10vh;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
+	/*background-color: #212121;*/
 	backdrop-filter: blur(5px);
 }
 
@@ -156,7 +171,7 @@ header p {
 }
 
 .header__menu a {
-	color: var(--color-background);
+	color: var(--color-background	);
 }
 
 .header__menu a:focus {
@@ -214,13 +229,16 @@ header p {
 
 
 footer {
+	position: absolute;
+	bottom: 0;
 	height: 8rem;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1%;
 	padding-inline: 5%;
-	margin-top: 4%;
+	/*margin-top: 4%;*/
 	background-color: var(--color-primary);
 }
 
@@ -281,8 +299,8 @@ footer {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100vh;
-	min-height: 50vh;
+	/*height: 100vh;*/
+	min-height: 45vh;
 	object-fit: cover;
 	filter: brightness(70%);
 }
@@ -324,7 +342,7 @@ footer {
 }
 
 .bienvenida__imagen img {
-	box-shadow: 8px 8px 5px gray;
+	box-shadow: 8px 8px 5px lightgrey;
 	border-radius: 7px;
 }
 
@@ -365,10 +383,8 @@ footer {
 	margin-bottom: 20px;
 	margin-inline: 10px;
 	padding: 7%;
-	/*background-color: rgba(0, 0, 0, 0.1);*/
-	/*background-color: #f3fbf4;*/
-	background-color: #f1f9f9;
-	box-shadow: 8px 8px 5px gray;
+	background-color: rgba(0, 0, 0, 0.02);
+	box-shadow: 8px 8px 5px lightgray;
 	border-radius: 3%;
 	max-width: 80%;
 }
@@ -408,7 +424,7 @@ footer {
 }
 
 .servicios img {
-	box-shadow: 8px 8px 5px gray;
+	box-shadow: 8px 8px 5px lightgray;
 	border-radius: 7px;
 }
 
