@@ -1,13 +1,8 @@
 
-/*:root {
-	--color-text: #143642;
-	--color-primary: #81D8D0;
-	--color-primary-strong: #0abab5;
-	--color-accent: #3F6C51;
-	--color-background: #f7fcf8;
-}
-*/
-
+				/*---------------------------
+				       BREAKPOINT 768px
+				-----------------------------*/
+				
 @media screen and (min-width: 768px) {
 
 	
@@ -169,8 +164,9 @@
 
 
 
-
-
+				/*---------------------------
+				       BREAKPOINT 1280px
+				-----------------------------*/
 
 @media screen and (min-width: 1280px) {
 	
@@ -284,9 +280,9 @@ header {
 	font-size: 1.2rem;
 }
 
-footer {
+/*footer {
 	height: 12vh;
-}
+}*/
 
 
 /*----------------------
