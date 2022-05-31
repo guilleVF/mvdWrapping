@@ -6,6 +6,8 @@
 	<title>Servicios - Montevideo Wrapping</title>
 	<link rel="icon" type="image/icon type" href="../img/logo.png">
 	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">	
+
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/mediaqueries.css">
@@ -48,12 +50,12 @@
 	<main>
 		
 		<!-- Cada sección contará con una imagen que haga alusión al servicio y una descripción detallada del mismo -->
-		<div class="contenedor__servicios">
-			<section class="servicios servicios__wraps">
-				<div class="imagen">
+		<div class="container contenedor__servicios">
+			<section class="container servicios servicios__wraps row">
+				<div class="imagen col-lg-6">
 					<img src="../img/servicios-wraps.jpg">
 				</div>
-				<div class="texto">
+				<div class="texto col-lg-4 m-auto">
 					<h2>WRAPS</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -64,11 +66,11 @@
 				</div>
 			</section>
 
-			<section class="servicios servicios__ppf">
-				<div class="imagen">
+			<section class="servicios servicios__ppf row">
+				<div class="imagen col-lg-6 order-lg-last">
 					<img src="../img/servicios-ppf.jpg">
 				</div>				
-				<div class="texto">
+				<div class="texto col-lg-4 m-auto">
 					<h2>PPF</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -79,11 +81,11 @@
 				</div>
 			</section>
 
-			<section class="servicios servicios__pol">
-				<div class="imagen">
+			<section class="servicios servicios__pol row">
+				<div class="imagen col-lg-6">
 					<img src="../img/servicios-polarizados.jpg">
 				</div>				
-				<div class="texto">
+				<div class="texto col-lg-4 m-auto">
 					<h2>POLARIZADOS</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -120,5 +122,6 @@
 		</div>	
 	</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

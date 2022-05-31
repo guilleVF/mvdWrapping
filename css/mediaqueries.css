@@ -17,7 +17,7 @@
 }
 
 
-.bienvenida {
+/*.bienvenida {
 	align-items: center;
 	justify-items: center;
 	grid-gap: 40px;
@@ -35,20 +35,16 @@
 
 .bienvenida__imagen {
 	grid-column: 3/4;
-}
+}*/
 
 .opiniones {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: auto;
+	/*display: grid;*/
+	/*grid-template-columns: repeat(3, 1fr);*/
+	/*grid-template-rows: auto;*/
 	padding-block: 4rem;
 }
 
-.opiniones h2 {
-	grid-column: 1/4;
-	justify-self: start;
-	padding-left: 5%;
-}
+
 
 
 .opiniones__recuadro { max-width: 30rem; height: 42rem; }
@@ -60,85 +56,13 @@
 ------------------------*/
 
 
-.servicios {
-	grid-template-columns: 1fr 1fr;
-
-}
-
-.servicios__ppf .texto {
-	order: -1;
-}
-
-.servicios .imagen {
-	max-width: 90%;
-}
-
 
 
 /*----------------------
        PORTFOLIO        
 ------------------------*/
 
-.contenedor-portfolios:first-child {
-	padding-top: 18vh;
-}
 
-.portfolio__galeria {
-	display: grid;
-	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: repeat(6, 10vh);
-	grid-gap: 20px;
-	margin-bottom: 100px;
-}
-
-.portfolio__galeria h2 {
-	grid-column: 1 / span 4;
-	grid-row: 1 / span 1;
-	/*justify-self: center;*/
-	align-self: center;
-}
-
-.portfolio__galeria img {
-	transition: all 0.3s;
-	border-radius: 7px;
-}
-
-.portfolio__galeria img:hover {
-	transform: scale(1.4);
-}
-
-.portfolio__galeria img:nth-child(2) {
-	grid-column: 1 / span 4;
-	grid-row: 2 / span 5;
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-}
-
-.portfolio__galeria img:nth-child(3) {
-	grid-column: 5 / span 2;
-	grid-row: 1 / span 3;
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-}
-
-.portfolio__galeria img:nth-child(4) {
-	grid-column: 7 / span 2;
-	grid-row: 1 / span 3;
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-}
-
-.portfolio__galeria img:nth-child(5) {
-	grid-column: 5 / span 4;
-	grid-row: 4 / span 3;
-	object-fit: cover;
-	object-position: 0 75%;
-	width: 100%;
-	height: 100%;
-}
 
 
 
@@ -146,7 +70,7 @@
        CONTACTO        
 ------------------------*/
 
-.contacto__infoForm {
+/*.contacto__infoForm {
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
 }
@@ -157,7 +81,7 @@
 
 .contacto__form {
 	max-width: 800px;
-}
+}*/
 
 }
 
@@ -287,7 +211,7 @@ header {
 ------------------------*/
 .bienvenida{
 	padding-block: 12rem;
-	padding-inline: 15rem;
+	/*padding-inline: 15rem;*/
 }
 .opiniones{
 	padding-inline: 8rem;
@@ -296,17 +220,13 @@ header {
 /*----------------------
        SERVICIOS        
 ------------------------*/
-.servicios{
-	padding-block: 5rem;
-	padding-inline: 8rem;
-}
 
 /*----------------------
        PORTFOLIOS        
 ------------------------*/
-.contenedor-portfolios{
+/*.contenedor-portfolios{
 	padding-inline: 8rem;
-}
+}*/
 
 .portfolios {
 	padding-block: 2rem;
@@ -324,13 +244,13 @@ header {
 /*----------------------
        CONTACTO        
 ------------------------*/
-.contacto__infoForm {
+/*.contacto__infoForm {
 	padding-inline: 8rem;
 }
 
 .contacto__mapa {
 	padding-inline: 10rem;
-}
+}*/
 
 
 }

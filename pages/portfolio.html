@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Portfolio - Montevideo Wrapping</title>
 	<link rel="icon" type="image/icon type" href="../img/logo.png">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">	
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -54,36 +56,92 @@
 
 		<!-- Galería de fotos de trabajos previos divididos por categoría -->
 		<div class="contenedor-portfolios">
-			<section class="portfolios portfolios__wraps">
-				<div class="portfolio__galeria">
-					<h2>WRAPS</h2>
-					<img src="../img/portfolio/finished-wrap1.jpg">
-					<img src="../img/portfolio/finished-wrap2.jpg">
-					<img src="../img/portfolio/finished-wrap3.jpg">
-					<img src="../img/portfolio/finished-wrap4.jpg">
-				</div>
-			</section>			
 
-			<section class="portfolios portfolios__ppf">
-				<div class="portfolio__galeria">
-					<h2>PPF</h2>
-					<img src="../img/portfolio/finished-ppf1.jpg">
-					<img src="../img/portfolio/finished-ppf2.jpg">
-					<img src="../img/portfolio/finished-ppf3.jpg">
-					<img src="../img/portfolio/finished-ppf4.jpg">
+			<div class="portfolio__galeria container col-xxl-6">
+				<h2>WRAPS</h2>
+				<div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="../img/portfolio/finished-wrap1.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/portfolio/finished-wrap2.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/portfolio/finished-wrap3.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/portfolio/finished-wrap4.jpg" class="d-block w-100" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
 				</div>
-			</section>	
+			</div>
 
-			<section class="portfolios portfolios__pol">
-					<div class="portfolio__galeria">
-					<h2>POLARIZADOS</h2>
-					<img src="../img/portfolio/finished-pol1.jpg">
-					<img src="../img/portfolio/finished-pol2.jpg">
-					<img src="../img/portfolio/finished-pol3.jpg">
-					<img src="../img/portfolio/finished-pol4.jpg">
-				</div>	
-			</section>
-		</div>				
+			<div class="portfolio__galeria container col-xxl-6">
+				<h2>PPF</h2>
+				<div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="../img/portfolio/finished-ppf1.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/portfolio/finished-ppf2.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/portfolio/finished-ppf3.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/portfolio/finished-ppf4.jpg" class="d-block w-100" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+
+			<div class="portfolio__galeria container col-xxl-6">
+				<h2>POLARIZADOS</h2>
+				<div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="../img/portfolio/finished-pol1.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/portfolio/finished-pol2.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/portfolio/finished-pol3.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/portfolio/finished-pol4.jpg" class="d-block w-100" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+
+		</div>	
 
 
 	</main>
@@ -110,6 +168,7 @@
 		</div>	
 	</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>
