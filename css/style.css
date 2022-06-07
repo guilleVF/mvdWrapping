@@ -3,7 +3,9 @@
 	--color-primary: #81D8D0;
 	--color-primary-strong: #0abab5;
 	--color-text: #143642;
-	--color-background: #f7fcf8;
+	/* --color-background: #f7fcf8; */
+	--color-background: #fafff9;
+
 }
 
 
@@ -50,7 +52,7 @@ h2 {
 	display: inline-block;
 	color: var(--color-text);
 	font-family: "Rubik", sans-serif;
-	letter-spacing: ;
+	line-height: 0.9;
 }
 
 h2::before {
@@ -65,7 +67,7 @@ h2::before {
 p,  
 b {
 	font-size: 1.6rem;
-	line-height: 1.5;
+	line-height: 1.4;
 	color: var(--color-text);
 }
 
