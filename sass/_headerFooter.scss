@@ -19,100 +19,105 @@ header {
     p {
         color: white;
     }
-}
 
-
-/*LOGO*/
-
-.header__logo {
-	padding: 1%;
-	max-height: 100%;
-
-    img {
+    .header__logo {
+        padding: 1%;
         max-height: 100%;
-    }
-}
-
-.header__contacto {
-	display: none;
-}
-
-.header__menu {
-    ul { 
-        transform: scale(1,0);
-        transform-origin: top;
-        transition: transform 300ms ease-in-out;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        align-items: end;
-        width: 100%;
-        top: 100%;
-        right: 0%;
-        background-color: rgba(0, 0, 0, 0.4);
-
-        li {
-            margin-block: 1.9rem;
-            margin-right: 15px;
-            font-size: 2.5rem;
-            font-weight: bold;
-            letter-spacing: 0.2rem;
-            font-family: "Overpass";
-        }
-    }
-    a {
-        color: $color-background;
-
-        &:focus {
-            color: $color-primary;
-            transition: all 0.2s;
-        }
-    }
-
-}
-
-.nav-toggle:checked ~ .header__menu ul {
-	transform: scale(1,1);
-}
-
-
-/*Menu hamburguesa*/
-
-.nav-toggle { /*Eliminamos el checkbox*/
-	display: none;
-}
-
-.nav-toggle-label { /*Ubicamos el label*/
-	position: absolute;
-	right: 18px;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	cursor: pointer;
-
-    & span {
-        display: block;
-        background: white;
-        height: 2px;
-        width: 3.5rem;
-        border-radius: 2px;
-        position: relative;
-
-        &::before {
-            @extend span;
-            content: '';
-            position: absolute;
-            bottom: 12px;
-        }
-        &::after {
-            @extend span;
-            content: '';
-            position: absolute;
-            top: 12px;
-        }
-    }
     
+        img {
+            max-height: 100%;
+        }
+    }
+
+    .header__contenedor {
+
+        .header__contacto {
+            display: none;
+        }
+        .header__menu {
+            ul { 
+                transform: scale(1,0);
+                transform-origin: top;
+                transition: transform 300ms ease-in-out;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                align-items: end;
+                width: 100%;
+                top: 100%;
+                right: 0%;
+                background-color: rgba(0, 0, 0, 0.4);
+        
+                li {
+                    margin-block: 1.9rem;
+                    margin-right: 15px;
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    letter-spacing: 0.2rem;
+                    font-family: "Overpass";
+                }
+            }
+            a {
+                color: $color-background;
+                opacity: 0;
+                transition: opacity 150ms ease-in-out;
+        
+                &:focus {
+                    color: $color-primary;
+                    transition: all 0.2s;
+                }
+            }
+        }
+        /*Menu hamburguesa*/
+        .nav-toggle { /*Eliminamos el checkbox*/
+            display: none;
+            
+            &:checked ~ .header__menu {
+                ul {
+                    transform: scale(1,1);
+                    a {
+                        opacity: 1;
+                        transition: opacity 250ms ease-in-out 250ms;
+                    }
+                }
+            }
+        }
+
+        .nav-toggle-label { /*Ubicamos el label*/
+            position: absolute;
+            right: 18px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            & span {
+                display: block;
+                background: white;
+                height: 2px;
+                width: 3.5rem;
+                border-radius: 2px;
+                position: relative;
+
+                &::before {
+                    @extend span;
+                    content: '';
+                    position: absolute;
+                    bottom: 12px;
+                }
+                &::after {
+                    @extend span;
+                    content: '';
+                    position: absolute;
+                    top: 12px;
+                }
+            }
+        }
+    }
 }
+
+
+
 
 
 /*---------------------------
@@ -121,57 +126,61 @@ header {
 
 @media screen and (min-width: 1280px) {
 
-
 header {
 	height: 12vh;
-}
 
-.header__contenedor {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	margin-right: 3%;
+    .header__contenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-right: 3%;
+        
+        .nav-toggle-label {
+            display: none;
+        }
     
-    .nav-toggle-label {
-        display: none;
-    }
+        .header__menu {
+            ul {
+                flex-direction: row;
+                transform: scale(1,1);
+                position: static;
+                box-shadow: none;
+                background-color: transparent;
+    
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 1.7rem;
 
-    .header__menu {
-        ul {
-            flex-direction: row;
-            transform: scale(1,1);
-            position: static;
-            box-shadow: none;
-            background-color: transparent;
-
-            li {
-                display: flex;
-                flex-direction: column;
-                font-size: 1.7rem;
-
-                &::before {
-                    content: "";
-                    margin-bottom: 0.5rem;
-                    width: 0%;
-                    height: 1px;
-                    background-color: $color-background;
-                    transition: all 0.2s ease;
-                    border-radius: 7px;
-                }
-
-                &:hover::before {
-                    width: 90%;
-                    margin-inline: auto;
-                }
-
-                & a:hover {
-                    color: $color-primary;
-                    transition: all 0.2s;
+                    a {
+                        opacity: 1;
+                    }
+    
+                    &::before {
+                        content: "";
+                        margin-bottom: 0.5rem;
+                        width: 0%;
+                        height: 1px;
+                        background-color: $color-background;
+                        transition: all 0.2s ease;
+                        border-radius: 7px;
+                    }
+    
+                    &:hover::before {
+                        width: 90%;
+                        margin-inline: auto;
+                    }
+    
+                    & a:hover {
+                        color: $color-primary;
+                        transition: all 0.2s;
+                    }
                 }
             }
         }
     }
 }
+
 }
 
 
