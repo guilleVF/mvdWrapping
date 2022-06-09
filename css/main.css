@@ -137,10 +137,6 @@ header .header__contenedor {
   /*Menu hamburguesa*/
 }
 
-header .header__contenedor .header__contacto {
-  display: none;
-}
-
 header .header__contenedor .header__menu ul {
   -webkit-transform: scale(1, 0);
           transform: scale(1, 0);
@@ -691,7 +687,7 @@ footer .footer__contenedor .footer__telefono {
       grid-template-rows: repeat(9, 3.5rem);
   -ms-grid-columns: (1fr)[13];
       grid-template-columns: repeat(13, 1fr);
-  border: 3px solid #81D8D0;
+  border: 2px solid #81D8D0;
   border-radius: 7px;
   max-width: 400px;
   margin-inline: auto;
@@ -702,6 +698,11 @@ footer .footer__contenedor .footer__telefono {
 
 .contacto__infoForm .contacto__form input {
   max-width: 100%;
+  border-top: none;
+  border-inline: none;
+  padding: 1rem;
+  border-bottom: 1px solid #81D8D0;
+  background-color: #f7fcf8;
 }
 
 .contacto__infoForm .contacto__form .email {
@@ -711,7 +712,6 @@ footer .footer__contenedor .footer__telefono {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
-  border-radius: 7px;
 }
 
 .contacto__infoForm .contacto__form .phone {
@@ -721,7 +721,6 @@ footer .footer__contenedor .footer__telefono {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
-  border-radius: 7px;
 }
 
 .contacto__infoForm .contacto__form .comentarios {
@@ -732,6 +731,9 @@ footer .footer__contenedor .footer__telefono {
   -ms-grid-row-span: 3;
   grid-row: 4 / 7;
   border-radius: 7px;
+  border: 1px solid #81D8D0;
+  background-color: #f7fcf8;
+  padding: 1rem;
 }
 
 .contacto__infoForm .contacto__form .boton {
@@ -744,8 +746,12 @@ footer .footer__contenedor .footer__telefono {
   color: var(--color-background);
   font-weight: bold;
   font-size: 1.4rem;
-  background-color: var(--color-primary);
-  border-radius: 7px;
+  -webkit-box-shadow: 3px 3px 5px lightgray;
+          box-shadow: 3px 3px 5px lightgray;
+}
+
+.contacto__infoForm .contacto__form .boton:hover {
+  cursor: pointer;
 }
 
 /*---------------------------
