@@ -121,7 +121,7 @@ header {
       BREAKPOINT 1280px
 -----------------------------*/
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: map-get($breakpoints, lg)) {
 
 header {
 	height: 12vh;
@@ -235,7 +235,7 @@ footer {
       BREAKPOINT 1280px
 -----------------------------*/
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: map-get($breakpoints, lg)) {
 
 footer {
     .footer__contenedor {

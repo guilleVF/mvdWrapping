@@ -401,7 +401,6 @@ footer .footer__contenedor .footer__telefono {
   top: 0;
   left: 0;
   width: 100%;
-  /*height: 100vh;*/
   min-height: 45vh;
   -o-object-fit: cover;
      object-fit: cover;
@@ -433,8 +432,8 @@ footer .footer__contenedor .footer__telefono {
 }
 
 .bienvenida {
-  padding-block: 6rem;
   padding-inline: 5%;
+  padding-block: 5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
@@ -459,7 +458,6 @@ footer .footer__contenedor .footer__telefono {
   height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-bottom: 30px;
 }
 
 .opiniones {
@@ -470,12 +468,13 @@ footer .footer__contenedor .footer__telefono {
   -ms-grid-columns: auto;
       grid-template-columns: auto;
   justify-items: center;
+  padding-inline: 5%;
+  padding-block: 5rem;
 }
 
 .opiniones h2 {
   -ms-grid-column-align: start;
       justify-self: start;
-  padding-inline: 5%;
 }
 
 .opiniones h2 span, .opiniones h2 header .header__contenedor .nav-toggle-label span::before, header .header__contenedor .nav-toggle-label .opiniones h2 span::before, .opiniones h2 header .header__contenedor .nav-toggle-label span::after, header .header__contenedor .nav-toggle-label .opiniones h2 span::after {
@@ -493,9 +492,7 @@ footer .footer__contenedor .footer__telefono {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-inline: 10px;
+  margin-top: 5rem;
   padding: 7%;
   background-color: rgba(0, 0, 0, 0.02);
   -webkit-box-shadow: 8px 8px 5px lightgray;
@@ -801,7 +798,6 @@ footer .footer__contenedor .footer__telefono {
     grid-column: 1/4;
     -ms-grid-column-align: start;
         justify-self: start;
-    padding-left: 5%;
   }
   .opiniones .opiniones__recuadro {
     max-width: 30rem;
@@ -845,7 +841,6 @@ footer .footer__contenedor .footer__telefono {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
-    /*justify-self: center;*/
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -937,7 +932,7 @@ footer .footer__contenedor .footer__telefono {
                             INDEX
                     ----------------------*/
   .bienvenida {
-    padding-block: 12rem;
+    padding-block: 10rem;
     padding-inline: 15rem;
   }
   .bienvenida .bienvenida__imagen {
@@ -946,7 +941,8 @@ footer .footer__contenedor .footer__telefono {
     grid-column: 3/4;
   }
   .opiniones {
-    padding-inline: 8rem;
+    padding-block: 10rem;
+    padding-inline: 15rem;
   }
   /*--------------------
                            SERVICIOS
@@ -965,7 +961,7 @@ footer .footer__contenedor .footer__telefono {
                              CLIENTES        
                     ------------------------*/
   .clientes__marcas {
-    padding-inline: 8rem;
+    padding-inline: 7rem;
   }
   /*----------------------
                             CONTACTO        

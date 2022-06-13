@@ -1,3 +1,13 @@
+@mixin content-spacing-mobile {
+    padding-inline: 5%;
+    padding-block: 5rem;
+}
+
+@mixin content-spacing-desktop {
+    padding-block: 10rem;
+    padding-inline: 15rem;
+}
+
 @keyframes fadeInFull {
     0% {
         opacity: 0;
