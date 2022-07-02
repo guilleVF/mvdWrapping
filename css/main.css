@@ -126,7 +126,7 @@ header p {
 
 header .header__logo {
   padding: 1%;
-  max-height: 100%;
+  height: auto;
 }
 
 header .header__logo img {
