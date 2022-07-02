@@ -167,7 +167,8 @@ header {
     
                     &:hover::before {
                         width: 90%;
-                        margin-inline: auto;
+                        margin-left: auto;
+                        margin-right: auto;
                     }
     
                     & a:hover {
@@ -196,7 +197,8 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1%;
-	padding-inline: 5%;
+	padding-left: 5%;
+    padding-right: 5%;
 	background-color: $color-primary;
 
     .footer__logo {
@@ -219,7 +221,8 @@ footer {
         .footer__redes {
             .img__redes {
                 max-width: 2.3rem;
-                margin-inline: 4px;
+                margin-left: 4px;
+                margin-right: 4px;
             }
         }
 

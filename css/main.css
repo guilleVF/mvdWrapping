@@ -297,7 +297,8 @@ header .header__contenedor .nav-toggle-label span::after {
   }
   header .header__contenedor .header__menu ul li:hover::before {
     width: 90%;
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   header .header__contenedor .header__menu ul li a:hover {
     color: #81D8D0;
@@ -324,7 +325,8 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   padding: 1%;
-  padding-inline: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: #81D8D0;
 }
 
@@ -358,7 +360,8 @@ footer .footer__contenedor p {
 
 footer .footer__contenedor .footer__redes .img__redes {
   max-width: 2.3rem;
-  margin-inline: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 footer .footer__contenedor .footer__direccion {
@@ -433,8 +436,10 @@ footer .footer__contenedor .footer__telefono {
 }
 
 .bienvenida {
-  padding-inline: 5%;
-  padding-block: 5rem;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
@@ -469,8 +474,10 @@ footer .footer__contenedor .footer__telefono {
   -ms-grid-columns: auto;
       grid-template-columns: auto;
   justify-items: center;
-  padding-inline: 5%;
-  padding-block: 5rem;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .opiniones h2 {
@@ -791,7 +798,8 @@ footer .footer__contenedor .footer__telefono {
         grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: auto;
         grid-template-rows: auto;
-    padding-block: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
   .opiniones h2 {
     -ms-grid-column: 1;
@@ -933,8 +941,10 @@ footer .footer__contenedor .footer__telefono {
                             INDEX
                     ----------------------*/
   .bienvenida {
-    padding-block: 10rem;
-    padding-inline: 15rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
   .bienvenida .bienvenida__imagen {
     -ms-grid-column: 3;
@@ -942,36 +952,44 @@ footer .footer__contenedor .footer__telefono {
     grid-column: 3/4;
   }
   .opiniones {
-    padding-block: 10rem;
-    padding-inline: 15rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
   /*--------------------
                            SERVICIOS
                     ----------------------*/
   .contenedor__servicios .servicios {
-    padding-block: 5rem;
-    padding-inline: 8rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
   /*----------------------
                            PORTFOLIOS        
                     ------------------------*/
   .contenedor-portfolios {
-    padding-inline: 8rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
   /*----------------------
                              CLIENTES        
                     ------------------------*/
   .clientes__marcas {
-    padding-inline: 7rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
   }
   /*----------------------
                             CONTACTO        
                     ------------------------*/
   .contacto__infoForm {
-    padding-inline: 8rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
   .contacto__mapa {
-    padding-inline: 10rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

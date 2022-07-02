@@ -1,11 +1,15 @@
 @mixin content-spacing-mobile {
-    padding-inline: 5%;
-    padding-block: 5rem;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 @mixin content-spacing-desktop {
-    padding-block: 10rem;
-    padding-inline: 15rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
 }
 
 @keyframes fadeInFull {
