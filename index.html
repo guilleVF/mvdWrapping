@@ -29,7 +29,7 @@
 
 <body>
 
-	<header>
+	<header id="navbar">
 		<div class="header__logo">
 			
 			<a href="./index.html"><img src="./img/logo.png" alt="Logo de Montevideo Wrapping"></a>
@@ -62,9 +62,10 @@
 			<div class="portada__logo">
 				<img src="./img/logo4w.png" alt="Logo alternativo de Montevideo Wrapping">
 			</div>
+			<a class="arrow" href="#bienvenida"></a>
 		</section>
 
-		<section class="bienvenida">
+		<section class="bienvenida" id="bienvenida">
 			<div class="bienvenida__texto">
 				<h1>Personalizá tu auto con <br><span>Montevideo Wrapping</span></h1>
 				<p>Fugiat dolor non ea dolor tempor minim do esse sunt labore officia labore velit irure proident commodo incididunt occaecat eiusmod in ut ex veniam velit minim incididunt esse aliqua commodo dolor aliquip qui dolor labore in adipisicing non amet sunt in esse velit nulla dolor amet labore incididunt dolor ut ea non ut in eiusmod nisi anim minim anim qui ea consequat commodo deserunt commodo nostrud reprehenderit consectetur cupidatat incididunt labore do tempor in enim in ea in tempor excepteur nostrud nulla sunt deserunt mollit officia laboris anim do labore deserunt proident ad esse labore labore.</p>
@@ -143,5 +144,18 @@
 	</footer>
 
 </body>
+
+<script>
+	var prevScrollpos = window.pageYOffset;
+	window.onscroll = function() {
+	var currentScrollPos = window.pageYOffset;
+	if (prevScrollpos > currentScrollPos) {
+		document.getElementById("navbar").style.top = "0";
+	} else {
+		document.getElementById("navbar").style.top = "-12vh";
+	}
+	prevScrollpos = currentScrollPos;
+	}
+</script>
 
 </html>
