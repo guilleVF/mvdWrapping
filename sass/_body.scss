@@ -43,6 +43,9 @@
         left: 48.6%;
         top: 70%;
         transform: rotate(-225deg);
+        animation: fadeInFull ease 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;	
         
         &::before {
             content: '';
@@ -404,6 +407,8 @@
 
         .opiniones__recuadro {
             max-width: 30rem; height: 42rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
         }
     }
 
