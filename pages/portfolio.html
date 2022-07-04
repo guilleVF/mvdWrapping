@@ -30,7 +30,7 @@
 
 <body>
 
-	<header>
+	<header id="navbar">
 		<div class="header__logo">
 			<a href="../index.html"><img src="../img/logo.png" alt="Logo de Montevideo Wrapping"></a>
 		</div>
@@ -113,5 +113,18 @@
 	</footer>
 
 </body>
+
+<script>
+	var prevScrollpos = window.pageYOffset;
+	window.onscroll = function() {
+	var currentScrollPos = window.pageYOffset;
+	if (prevScrollpos > currentScrollPos) {
+		document.getElementById("navbar").style.top = "0";
+	} else {
+		document.getElementById("navbar").style.top = "-12vh";
+	}
+	prevScrollpos = currentScrollPos;
+	}
+</script>
 
 </html>
