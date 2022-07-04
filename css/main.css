@@ -418,7 +418,7 @@ footer .footer__contenedor .footer__telefono {
 
 .portada .portada__logo {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
