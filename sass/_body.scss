@@ -3,16 +3,13 @@
                     ----------------------*/
 
 .portada {
-	position: relative;
-	top: 0;
-	left: 0;
     background-image: url("../img/front.jpg");
     background-attachment: fixed;
     background-size:cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     width: 100%;
-    min-height: 100vh;
+    min-height:100vh;
     display: flex;
     filter: brightness(80%);
 
@@ -23,7 +20,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 998;
-        max-width: 60%;
         animation: fadeInFull ease 1s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;	
@@ -32,6 +28,7 @@
             object-fit: contain;
             opacity: 82%;
             height: auto;
+            max-width: 65vw;
         }
     }
 
@@ -45,11 +42,12 @@
             transform: rotate(45deg);
             height: 120%;
             cursor: pointer;
+            border-color: $color-primary;
         }
         &::before {
             transform: scale(.8);
             cursor: pointer;
-            
+            border-color: $color-primary;
         }
      }
 
@@ -96,10 +94,12 @@
             transform: rotate(45deg);
             height: 120%;
             cursor: pointer;
+            border-color: $color-primary;
         }
         &:hover::before {
             transform: scale(.8);
             cursor: pointer;
+            border-color: $color-primary;
             
         }
     }
@@ -207,8 +207,31 @@
 
         .texto {
             max-width: 70%;
-        }
+            
+            .btn_servicios {
+                border-radius: 5px;
+                display: inline-block;
+                margin-top: 8px;
+                color: $color-text;
+                background-color: $color-primary;
+                transition: all 0.15s;
 
+                a {
+                    all: unset;
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                    display: inline-block;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+
+            .btn_servicios:hover {
+                background-color: $color-primary;
+                color: $color-background;
+                border: none;
+            }
+        }    
         &:first-child {
             margin-top: 15vh;
         }

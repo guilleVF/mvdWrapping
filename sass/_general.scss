@@ -36,6 +36,7 @@ html {
 	background-color: $color-background;
 	font-size: 10px;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color:  rgba(0,0,0,0);
 
     body {
         min-height: 100vh;
