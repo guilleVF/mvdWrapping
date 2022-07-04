@@ -6,34 +6,52 @@
 	position: relative;
 	top: 0;
 	left: 0;
+    background-image: url("../img/front.jpg");
+    background-attachment: fixed;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    filter: brightness(80%);
 
-    img {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-height: 45vh;
-        object-fit: cover;
-        filter: brightness(70%);
-    }
 
     .portada__logo {
         position: absolute;
-        top: 45%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 998;
-        max-width: 50%;
+        max-width: 60%;
         animation: fadeInFull ease 1s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;	
 
         img {
             object-fit: contain;
-            opacity: 80%;
+            opacity: 82%;
             height: auto;
         }
     }
+
+    .portada__logo:hover {
+        cursor: pointer;
+    }
+
+    // Hover en logo, dispara evento de flecha
+    .portada__logo:hover ~ .arrow {
+        &::after {
+            transform: rotate(45deg);
+            height: 120%;
+            cursor: pointer;
+        }
+        &::before {
+            transform: scale(.8);
+            cursor: pointer;
+            
+        }
+     }
 
 
     .arrow {
@@ -84,7 +102,6 @@
             cursor: pointer;
             
         }
-          
     }
 }
 
