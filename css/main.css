@@ -824,6 +824,14 @@ footer .footer__contenedor .footer__telefono {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.contacto__infoForm .contacto__form .email:focus {
+  outline: none;
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
 }
 
 .contacto__infoForm .contacto__form .phone {
@@ -833,6 +841,14 @@ footer .footer__contenedor .footer__telefono {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.contacto__infoForm .contacto__form .phone:focus {
+  outline: none;
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
 }
 
 .contacto__infoForm .contacto__form .comentarios {
@@ -846,6 +862,14 @@ footer .footer__contenedor .footer__telefono {
   border: 1px solid #81D8D0;
   background-color: #f7fcf8;
   padding: 1rem;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.contacto__infoForm .contacto__form .comentarios:focus {
+  outline: none;
+  -webkit-transform: scale(103%);
+          transform: scale(103%);
 }
 
 .contacto__infoForm .contacto__form .boton {
@@ -855,15 +879,21 @@ footer .footer__contenedor .footer__telefono {
   -ms-grid-row: 8;
   -ms-grid-row-span: 1;
   grid-row: 8 / 9;
-  color: var(--color-background);
   font-weight: bold;
   font-size: 1.4rem;
+  color: #143642;
+  background-color: #81D8D0;
   -webkit-box-shadow: 3px 3px 5px lightgray;
           box-shadow: 3px 3px 5px lightgray;
+  border-radius: 5px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
 }
 
 .contacto__infoForm .contacto__form .boton:hover {
   cursor: pointer;
+  background-color: #81D8D0;
+  color: #f7fcf8;
 }
 
 /*---------------------------
