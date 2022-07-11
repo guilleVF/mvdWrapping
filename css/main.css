@@ -400,6 +400,7 @@ footer .footer__contenedor .footer__telefono {
                             INDEX
                     ----------------------*/
 .portada {
+  position: relative;
   background-image: url("../img/front.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -578,6 +579,7 @@ footer .footer__contenedor .footer__telefono {
      object-fit: cover;
   -webkit-filter: brightness(90%);
           filter: brightness(90%);
+  border-radius: 1px;
 }
 
 .opiniones {
@@ -995,8 +997,6 @@ footer .footer__contenedor .footer__telefono {
   }
   .video video {
     height: 700px;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
   .opiniones {
     display: -ms-grid;
