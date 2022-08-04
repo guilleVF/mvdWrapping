@@ -12,11 +12,13 @@ class Producto {
         let tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.id = this.id;
-        tarjeta.innerHTML = `<img class="producto-imagen"src=${this.image}>
+        tarjeta.innerHTML = `<div class="producto-arriba"><img class="producto-imagen"src=${this.image}>
                             <h2 class="producto-titulo">${this.titulo}</h2>
                             <p class="producto-descripcion">${this.descripcion}</p>
-                            <h3 class="producto-precio">US$ ${this.precio}</h3>
-                            <div id=${this.id} class="btn btn_tienda"><a href="#"><h3>Agregar al carrito</h2></a></div>`;
+                            </div>
+                            <div class="producto-abajo"><h3 class="producto-precio">US$ ${this.precio}</h3>
+                            <div id=${this.id} class="btn btn_tienda"><a href="#"><h3>Agregar al carrito</h2></a></div>
+                            </div>`;
         
         let contenedor = document.querySelector(".contenedor-tienda");
         contenedor.append(tarjeta);
@@ -80,6 +82,7 @@ let contadorCarrito = 0;
 nuevoProducto("Casco LS2 Carbon", "Casco de fibra de carbono diseñado para ruta", 570);
 nuevoProducto("Casco LS2 Arrow", "Casco de alto rendimiento para pilotos", 440);
 nuevoProducto("Casco LS2 Pioneer", "Casco de competición ultra liviano", 480);
+nuevoProducto("Casco LS2 X-FORCE", "Casco de cross en fibra de carbono", 500);
 
 // Los mostramos en la página
 for (let producto of listaProductos) {
