@@ -54,19 +54,42 @@ header {
                     font-weight: bold;
                     letter-spacing: 0.2rem;
                     font-family: "Overpass";
+
+                    a {
+                        color: $color-background;
+                        opacity: 0;
+                        transition: opacity 150ms ease-in-out;
+                        font-weight: 400;
+                
+                        &:focus {
+                            color: $color-primary;
+                            transition: all 0.2s;
+                        }
+                        
+                        .carrito-icono {
+                            left: 0;
+                            top: 0;
+                            max-width: 30px;
+                            display: flex;
+
+                            img {
+                                margin-left: -20px;
+                                margin-top: -18px;
+                                object-fit: contain;
+                                align-self: start;
+                            }
+                            p {
+                                margin-top: -10px;
+                                font-size: 1rem;
+                                font-weight: 600;
+                                color: $color-background;
+                            }
+                        }
+                        
+                    }
                 }
             }
-            a {
-                color: $color-background;
-                opacity: 0;
-                transition: opacity 150ms ease-in-out;
-                font-weight: 400;
-        
-                &:focus {
-                    color: $color-primary;
-                    transition: all 0.2s;
-                }
-            }
+
         }
         /*Menu hamburguesa*/
         .nav-toggle { /*Eliminamos el checkbox*/
@@ -128,7 +151,6 @@ header {
 
 header {
 	height: 10vh;
-
     .header__contenedor {
         display: flex;
         flex-direction: column;
@@ -146,7 +168,11 @@ header {
                 position: static;
                 box-shadow: none;
                 background-color: transparent;
-    
+                align-items: center;
+                
+                .li-carrito {
+                    all: unset;
+                }
                 li {
                     display: flex;
                     flex-direction: column;
@@ -154,6 +180,19 @@ header {
 
                     a {
                         opacity: 1;
+                        
+                        .carrito-icono {
+                            transition: all 0.15s ease;
+                            img {
+                                margin: 2px;
+                            }
+                            p {
+                                margin-top: 20px;
+                            }
+                            &:hover {
+                                transform: scale(110%);
+                            }
+                        }
                     }
     
                     &::before {

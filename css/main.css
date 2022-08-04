@@ -34,20 +34,20 @@
   }
 }
 
-.btn_servicios {
+.btn {
   border-radius: 40px;
   max-width: 300px;
   color: #143642;
   background-color: #81D8D0;
   -webkit-box-shadow: 2px 2px 2px lightgrey;
           box-shadow: 2px 2px 2px lightgrey;
-  -webkit-transition: all 0.15s;
-  transition: all 0.15s;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
   padding: 2px 12px;
   margin: 25px auto;
 }
 
-.btn_servicios a {
+.btn a {
   all: unset;
   cursor: pointer;
   font-size: 1.3rem;
@@ -55,12 +55,17 @@
   top: 20px;
 }
 
-.btn_servicios:hover {
+.btn:hover {
   background-color: #81D8D0;
   color: #f7fcf8;
   border: none;
   -webkit-box-shadow: 2px 2px 10px lightgrey;
           box-shadow: 2px 2px 10px lightgrey;
+}
+
+.btn:active {
+  -webkit-transform: scale(97%);
+          transform: scale(97%);
 }
 
 html {
@@ -211,7 +216,7 @@ header .header__contenedor .header__menu ul li {
   font-family: "Overpass";
 }
 
-header .header__contenedor .header__menu a {
+header .header__contenedor .header__menu ul li a {
   color: #f7fcf8;
   opacity: 0;
   -webkit-transition: opacity 150ms ease-in-out;
@@ -219,10 +224,36 @@ header .header__contenedor .header__menu a {
   font-weight: 400;
 }
 
-header .header__contenedor .header__menu a:focus {
+header .header__contenedor .header__menu ul li a:focus {
   color: #81D8D0;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+header .header__contenedor .header__menu ul li a .carrito-icono {
+  left: 0;
+  top: 0;
+  max-width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .header__contenedor .header__menu ul li a .carrito-icono img {
+  margin-left: -20px;
+  margin-top: -18px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+header .header__contenedor .header__menu ul li a .carrito-icono p {
+  margin-top: -10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f7fcf8;
 }
 
 header .header__contenedor .nav-toggle {
@@ -310,6 +341,12 @@ header .header__contenedor .nav-toggle-label span::after {
     -webkit-box-shadow: none;
             box-shadow: none;
     background-color: transparent;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .header__contenedor .header__menu ul .li-carrito {
+    all: unset;
   }
   header .header__contenedor .header__menu ul li {
     display: -webkit-box;
@@ -323,6 +360,20 @@ header .header__contenedor .nav-toggle-label span::after {
   }
   header .header__contenedor .header__menu ul li a {
     opacity: 1;
+  }
+  header .header__contenedor .header__menu ul li a .carrito-icono {
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  header .header__contenedor .header__menu ul li a .carrito-icono img {
+    margin: 2px;
+  }
+  header .header__contenedor .header__menu ul li a .carrito-icono p {
+    margin-top: 20px;
+  }
+  header .header__contenedor .header__menu ul li a .carrito-icono:hover {
+    -webkit-transform: scale(110%);
+            transform: scale(110%);
   }
   header .header__contenedor .header__menu ul li::before {
     content: "";
@@ -628,6 +679,13 @@ footer .footer__contenedor .footer__telefono {
           box-shadow: 8px 8px 5px lightgray;
   border-radius: 3%;
   max-width: 80%;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.opiniones .opiniones__recuadro:hover {
+  -webkit-transform: scale(102%);
+          transform: scale(102%);
 }
 
 .opiniones .recuadro__abajo {
@@ -741,11 +799,6 @@ footer .footer__contenedor .footer__telefono {
   text-align: center;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
-}
-
-.contenedor-tienda .producto:hover {
-  -webkit-transform: scale(102%);
-          transform: scale(102%);
 }
 
 .contenedor-tienda .producto .producto-imagen {
@@ -987,6 +1040,11 @@ footer .footer__contenedor .footer__telefono {
           box-shadow: 2px 2px 10px lightgray;
 }
 
+.contacto__infoForm .contacto__form .boton:active {
+  -webkit-transform: scale(97%);
+          transform: scale(97%);
+}
+
 /*---------------------------
       BREAKPOINT 768px
 -----------------------------*/
@@ -1189,7 +1247,7 @@ footer .footer__contenedor .footer__telefono {
     padding-left: 15rem;
     padding-right: 15rem;
   }
-  .bienvenida .bienvenida__texto .btn_servicios {
+  .bienvenida .bienvenida__texto .btn {
     margin-top: 30px;
     margin-left: 0;
   }
@@ -1235,6 +1293,17 @@ footer .footer__contenedor .footer__telefono {
   .contacto__mapa {
     padding-left: 10rem;
     padding-right: 10rem;
+  }
+  /*----------------------
+                            TIENDA        
+                    ------------------------*/
+  .contenedor-tienda .producto .producto-imagen {
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+  }
+  .contenedor-tienda .producto .producto-imagen:hover {
+    -webkit-transform: scale(120%);
+            transform: scale(120%);
   }
 }
 /*# sourceMappingURL=main.css.map */
