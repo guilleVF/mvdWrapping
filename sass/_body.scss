@@ -5,14 +5,13 @@
 .portada {
     position: relative;
     background-image: url("../img/front.jpg");
-    background-attachment: fixed;
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
     min-height:100vh;
     display: flex;
-    filter: brightness(75%);
+    filter: brightness(70%);
     box-shadow: 0px 5px 20px lightgrey;
     
 
@@ -28,81 +27,18 @@
 
         img {
             object-fit: contain;
-            opacity: 82%;
+            opacity: 52%;
             height: auto;
             max-width: 65vw;
+            transition: all 0.15s ease;
         }
     }
 
-    .portada__logo:hover {
-        cursor: pointer;
-    }
-
-    // Hover en logo, dispara evento de flecha
-    .portada__logo:hover ~ .arrow {
-        &::after {
-            transform: rotate(45deg);
-            height: 120%;
+    .portada__logo {
+        img:hover {
             cursor: pointer;
-            border-color: $color-primary;
-        }
-        &::before {
-            transform: scale(.8);
-            cursor: pointer;
-            border-color: $color-primary;
-        }
-     }
-
-
-    .arrow {
-        width: 6vmin;
-        height: 6vmin;
-        position: absolute;
-        left: 48.6%;
-        top: 70%;
-        transform: rotate(-225deg);
-        animation: fadeInFull ease 1s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;	
-        
-        &::before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            border-width: .8vmin .8vmin 0 0;
-            border-style: solid;
-            border-color: #cccccc;
-            transition: .2s ease;
-            display: block;
-            transform-origin: 100% 0;
-        }
-    
-        
-        &:after {
-            content: '';
-            float: left;
-            position: relative;
-            top: -100%;
-            width: 100%;
-            height: 100%;
-            border-width: 0 .8vmin 0 0;
-            border-style: solid;
-            border-color: #cccccc;
-            transform-origin: 100% 0;
-            transition:.2s ease;
-        }
-        
-        &:hover::after {
-            transform: rotate(45deg);
-            height: 120%;
-            cursor: pointer;
-            border-color: $color-primary;
-        }
-        &:hover::before {
-            transform: scale(.8);
-            cursor: pointer;
-            border-color: $color-primary;
-            
+            opacity: 0.75;
+            max-width: 26.5vw
         }
     }
 }
@@ -124,7 +60,8 @@
 
     .bienvenida__imagen {
         img {
-            box-shadow: 0px 0px 3px 3px lightgrey;
+            // box-shadow: 0px 0px 3px 3px lightgrey;
+            box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
             border-radius: 5px;
         }
     }
@@ -272,6 +209,7 @@
         .producto-precio {
             font-size: 2em;
             color: cadetblue;
+            // color: $color-primary-strong;
         }
 
 
