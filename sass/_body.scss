@@ -103,10 +103,6 @@
         box-shadow: 8px 8px 5px lightgray;
         border-radius: 3%;
         max-width: 80%;
-        transition: all 0.15s ease;
-        &:hover {
-            transform:scale(102%);
-        }
     }
 
     .recuadro__abajo {
@@ -209,11 +205,8 @@
         .producto-precio {
             font-size: 2em;
             color: cadetblue;
-            // color: $color-primary-strong;
+            color: $color-primary;
         }
-
-
-
         
     }
 }
@@ -588,13 +581,6 @@
     
     .bienvenida {
         @include content-spacing-desktop;
-
-        .bienvenida__texto {
-            .btn {
-                margin-top: 30px;
-                margin-left: 0;
-            }
-        }
     }
     .opiniones {
         @include content-spacing-desktop;
@@ -610,12 +596,6 @@
             padding-bottom: 5rem;
             padding-left: 8rem;
             padding-right: 8rem;
-
-            .texto {
-                p {
-                    margin-bottom: 50px;
-                }
-            }
         }
     }
 
@@ -635,6 +615,15 @@
     .clientes__marcas {
 	    padding-left: 7rem;
         padding-right: 7rem;
+
+        .clientes__logos {
+            img {
+                transition: all 0.35s ease;
+                &:hover {
+                    transform: scale(110%);
+                }
+            }
+        }
     }
 
                     /*----------------------

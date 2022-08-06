@@ -36,11 +36,23 @@
 
 .btn {
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 40px;
+  -webkit-box-shadow: 2px 2px 2px lightgrey;
+          box-shadow: 2px 2px 2px lightgrey;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
-  padding: 1px 18px;
+  padding: 2px 20px;
   margin-bottom: 30px;
+}
+
+.btn .btn_primario {
+  color: #143642;
+  background-color: #79AEA3;
+}
+
+.btn .btn_secundario {
+  background-color: #ed7e2e;
+  color: whitesmoke;
 }
 
 .btn a {
@@ -61,16 +73,6 @@
 .btn:active {
   -webkit-transform: scale(97%);
           transform: scale(97%);
-}
-
-.btn_primario {
-  color: #143642;
-  background-color: #81D8D0;
-}
-
-.btn_secundario {
-  background-color: #79AEA3;
-  color: #e0fbfc;
 }
 
 html {
@@ -226,7 +228,7 @@ header .header__contenedor .header__menu ul li a {
   opacity: 0;
   -webkit-transition: opacity 150ms ease-in-out;
   transition: opacity 150ms ease-in-out;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 header .header__contenedor .header__menu ul li a:focus {
@@ -555,7 +557,7 @@ footer .footer__contenedor .footer__telefono {
 .bienvenida .bienvenida__texto span, .bienvenida .bienvenida__texto header .header__contenedor .nav-toggle-label span::before, header .header__contenedor .nav-toggle-label .bienvenida .bienvenida__texto span::before, .bienvenida .bienvenida__texto header .header__contenedor .nav-toggle-label span::after, header .header__contenedor .nav-toggle-label .bienvenida .bienvenida__texto span::after {
   font-size: 1.9rem;
   font-weight: 500;
-  color: #81D8D0;
+  color: #0abab5;
 }
 
 .bienvenida .bienvenida__imagen img {
@@ -592,7 +594,7 @@ footer .footer__contenedor .footer__telefono {
 }
 
 .opiniones h2 span, .opiniones h2 header .header__contenedor .nav-toggle-label span::before, header .header__contenedor .nav-toggle-label .opiniones h2 span::before, .opiniones h2 header .header__contenedor .nav-toggle-label span::after, header .header__contenedor .nav-toggle-label .opiniones h2 span::after {
-  color: #81D8D0;
+  color: #0abab5;
 }
 
 .opiniones .opiniones__recuadro {
@@ -613,6 +615,13 @@ footer .footer__contenedor .footer__telefono {
           box-shadow: 8px 8px 5px lightgray;
   border-radius: 3%;
   max-width: 80%;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.opiniones .opiniones__recuadro:hover {
+  -webkit-transform: scale(102%);
+          transform: scale(102%);
 }
 
 .opiniones .recuadro__abajo {
@@ -1208,14 +1217,6 @@ footer .footer__contenedor .footer__telefono {
   .clientes__marcas {
     padding-left: 7rem;
     padding-right: 7rem;
-  }
-  .clientes__marcas .clientes__logos img {
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-  }
-  .clientes__marcas .clientes__logos img:hover {
-    -webkit-transform: scale(110%);
-            transform: scale(110%);
   }
   /*----------------------
                             CONTACTO        

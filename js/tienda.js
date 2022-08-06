@@ -17,7 +17,7 @@ class Producto {
                             <p class="producto-descripcion">${this.descripcion}</p>
                             </div>
                             <div class="producto-abajo"><h3 class="producto-precio">US$ ${this.precio}</h3>
-                            <div id=${this.id} class="btn btn_tienda"><a href="#"><h3>Agregar al carrito</h2></a></div>
+                            <div id=${this.id} class="btn btn_tienda btn_primario"><a href="#"><h3>Agregar al carrito</h2></a></div>
                             </div>`;
         
         let contenedor = document.querySelector(".contenedor-tienda");
@@ -51,7 +51,7 @@ class Carrito {
 
     devolverTotal() {
         this.agregados.forEach(x => console.log(x));
-        return(`La suma de los productos seleccionados es $${this.total}`); 
+        return(`Tiene ${contadorCarrito} items en el carro que suman un total de $${this.total}`); 
     }
 }
 
