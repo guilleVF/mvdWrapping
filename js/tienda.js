@@ -13,11 +13,11 @@ class Producto {
         tarjeta.className = "producto";
         tarjeta.id = this.id;
         tarjeta.innerHTML = `<div class="producto-arriba"><img class="producto-imagen"src=${this.image}>
-                            <h2 class="producto-titulo">${this.titulo}</h2>
+                            <h4 class="producto-titulo">${this.titulo}</h4>
                             <p class="producto-descripcion">${this.descripcion}</p>
                             </div>
                             <div class="producto-abajo"><h3 class="producto-precio">US$ ${this.precio}</h3>
-                            <div id=${this.id} class="btn btn_tienda btn_primario"><a href="#"><h3>Agregar al carrito</h2></a></div>
+                            <div id=${this.id} class="btn btn_tienda btn_primario"><a href="#carrito"><h3>Agregar al carrito</h2></a></div>
                             </div>`;
         
         let contenedor = document.querySelector(".contenedor-tienda");
@@ -27,26 +27,57 @@ class Producto {
 
 
 
-
 class Carrito {
     constructor() {
         this.agregados = [];
-        this.total = 0;
+        this.subTotal = 0;
     }
     
-    agregarProducto(producto) {
-        // Si el producto no se encuentra en el carrito, lo agregamos. De lo contrario aumentamos su cantidad en 1
+    agregarProducto(item) {
+        // Si el producto no se encuentra en el carrito, lo agregamos y lo mostramos en el carrito. De lo contrario aumentamos su cantidad en 1
         contadorCarrito++;
-        let resultado = this.agregados.find(x => x.id == producto.id);
-        if (typeof(resultado) == "undefined") {
-            this.agregados.push(producto);
+        let existe = this.agregados.some(x => x.id == item.id);
+        if (!existe) {
+            this.agregados.push(item);
+            // Nos conectamos al elemento contenedor
+            let itemCarrito = document.querySelector(".item_carrito");
+            // Creamos el elemento que vamos a insertar en la página de carrito
+            let content = document.createElement("div");
+            content.className = "item_data";
+            content.id = `carrito${item.id}`;
+            content.innerHTML = `<div class="item_img"><img src="../img/tienda/${item.id}.png" alt=""></div>
+                                <div class="item_titulo"><p>${item.titulo}</p></div>
+                                <div class="item_cantidad"><p>${item.cantidad}</p></div>
+                                <div class="item_precio"><p>US$ ${item.precio}</p></div>
+                                <div class="item_precioSuma"><p>US$ ${item.precio}</p></div>`;
+            // Agregamos el contenido a la página
+            itemCarrito.appendChild(content);
         } else {
-            resultado.cantidad++;
+            // Aumentamos la cantidad de ese producto
+            item.cantidad++;
         } 
-        this.total += producto.precio;
-        let numeroCarrito = document.querySelector(".numeroCarrito");
-        // document.numeroCarrito.style.opacity = "1";
-        numeroCarrito.innerHTML = contadorCarrito;
+        this.actualizarCarrito(item);
+    }
+
+    actualizarCarrito(item) {
+
+                // Actualizamos la cantidad y suma de este producto
+                let item_cantidad = document.querySelector(`#carrito${item.id} .item_cantidad p`);
+                item_cantidad.innerHTML = `${item.cantidad}`;
+                let item_precioSuma = document.querySelector(`#carrito${item.id} .item_precioSuma p`);
+                let suma = item.precio * item.cantidad;
+                item_precioSuma.innerHTML = `US$ ${suma}`; 
+        
+                // Cambiamos el núnero que figura junto al icono de carrito
+                let numeroCarrito = document.querySelector(".numeroCarrito");
+                numeroCarrito.innerHTML = contadorCarrito;
+                // Acutalizamos el subtotal y total en el carrito
+                this.subTotal += item.precio;
+                let subTotal = document.querySelector(".suma_subtotal_data");
+                subTotal.innerHTML = `US$ ${this.subTotal}`;
+                let total = document.querySelector(".suma_total_data");
+                let sumaTotal = 10 + this.subTotal;
+                total.innerHTML = `US$ ${sumaTotal}`;
     }
 
     devolverTotal() {
@@ -57,8 +88,7 @@ class Carrito {
 
 
 
-
-function nuevoProducto (titulo, descripcion, precio){
+function nuevoProducto (titulo, descripcion, precio) {
     const producto = new Producto (contadorId, titulo, descripcion, precio);
     listaProductos.push(producto);
     contadorId++;
@@ -78,7 +108,6 @@ let contadorId = 0;
 let contadorCarrito = 0;
 
 // Creamos productos de prueba y los agregamos a la lista de productos
-
 nuevoProducto("Casco LS2 Carbon", "Casco de fibra de carbono diseñado para ruta", 570);
 nuevoProducto("Casco LS2 Arrow", "Casco de alto rendimiento para pilotos", 440);
 nuevoProducto("Casco LS2 Pioneer", "Casco de competición ultra liviano", 480);
@@ -89,24 +118,13 @@ for (let producto of listaProductos) {
     producto.enlistarProducto();
 }
 
-let btn_tienda = document.getElementsByClassName("btn_tienda");
 const carrito = new Carrito;
 
 // Escuchamos el evento click en los botones de la tienda
+let btn_tienda = document.getElementsByClassName("btn_tienda");
+
 for (let btn of btn_tienda) {
-    btn.onclick = () => {console.log(`Agregado el producto con el id=${btn.id}`)};
-    btn.onclick = () => {carrito.agregarProducto(buscarProducto(btn.id))};
+    btn.addEventListener("click", () => {carrito.agregarProducto(buscarProducto(btn.id))});
 }
 
 
-
-// Creamos un nuevo carrito y agregamos distintos productos
-
-// const carrito = new Carrito;
-// carrito.agregarProducto(listaProductos[0]);
-// carrito.agregarProducto(listaProductos[1]);
-// carrito.agregarProducto(listaProductos[2]);
-// carrito.agregarProducto(listaProductos[1]);
-
-
-// console.log(carrito.devolverTotal());

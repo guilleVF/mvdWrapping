@@ -13,7 +13,21 @@
     display: flex;
     filter: brightness(70%);
     box-shadow: 0px 5px 20px lightgrey;
-    
+
+    // .portada_texto {
+    //     position: absolute;
+    //     top: 80%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);    
+    //     z-index: 999;
+    //     text-align: center;
+    //     max-width: 400px;
+    //     p {
+    //         font-size: 2.5em;
+    //         font-weight: 400;
+    //         color: white;
+    //     }  
+    // }
 
     .portada__logo {
         position: absolute;
@@ -31,14 +45,11 @@
             height: auto;
             max-width: 65vw;
             transition: all 0.15s ease;
-        }
-    }
-
-    .portada__logo {
-        img:hover {
-            cursor: pointer;
-            opacity: 0.75;
-            max-width: 26.5vw
+            &:hover {
+                cursor: pointer;
+                opacity: 0.75;
+                max-width: 26.5vw
+            }
         }
     }
 }
@@ -170,46 +181,7 @@
     }
 }
 
-                    /*----------------------
-                              TIENDA        
-                    ------------------------*/
 
-.contenedor-tienda {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    &:first-child {
-        padding-top: 12vh;
-    }
-    
-    .producto {
-        padding: 20px;
-        margin: 40px 20px;
-        max-width: 350px;
-        border-radius: 4px;
-        box-shadow: 0px 0px 2px 2px  lightgray;
-        text-align: center;
-        transition: all 0.15s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .producto-imagen {
-            max-width: 80%;
-            margin-bottom: 20px;
-        }
-        .producto-titulo {
-            margin-bottom: 0;
-        }
-        .producto-precio {
-            font-size: 2em;
-            color: cadetblue;
-            color: $color-primary;
-        }
-        
-    }
-}
 
                     /*----------------------
                             PORTFOLIO        
@@ -369,16 +341,17 @@
             grid-row: 8 / 9;
             font-weight: bold;
             font-size: 1.4rem;
-            color: $color-text;
+            color: $color-background;
             background-color: $color-primary;
             box-shadow: 2px 2px 2px lightgray;
             border-radius: 40px;
             transition: all 0.15s;
             &:hover {
                 cursor: pointer;
-                background-color: $color-primary;
-                color: $color-background;
-                box-shadow: 2px 2px 10px lightgray;
+                background-color: $color-background;
+                color: $color-primary;   
+                border: none;
+                box-shadow: 2px 2px 10px lightgrey;
             }
             &:active {
                 transform: scale(97%);
@@ -389,7 +362,128 @@
 
 
 
+                    /*----------------------
+                             TIENDA        
+                    ------------------------*/
 
+.contenedor-tienda {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &:first-child {
+        padding-top: 12vh;
+    }
+    
+    .producto {
+        padding: 20px;
+        margin: 40px 20px;
+        max-width: 350px;
+        border-radius: 4px;
+        // box-shadow: 0px 0px 2px 2px  lightgray;
+        text-align: center;
+        transition: all 0.15s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .producto-imagen {
+            max-width: 80%;
+            margin-bottom: 20px;
+            background-color: #e5e5e5;
+            padding: 35px;
+            border-radius: 500px;
+            // box-shadow: 2px 2px 10px grey;
+        }
+        .producto-titulo {
+            margin-bottom: 0;
+            font-size: 1.8em;
+        }
+        .producto-precio {
+            font-size: 2em;
+            color: cadetblue;
+            color: $color-primary;
+        }
+        
+    }
+}
+
+                    /*--------------------
+                            CARRITO
+                    ----------------------*/
+.body_carrito {
+    @include content-spacing-desktop;
+
+    h3 {
+        margin-bottom: 60px;
+        font-size: 1.8em;
+    }
+}
+
+.item_carrito {
+        .item_label {
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            text-align: center;
+            .label_titulo {
+                grid-column: 2/3;
+            }
+        }
+    .item_data {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        text-align: center;
+        align-items: center;
+        .item_img {
+            max-width: 80px;
+            margin: 20px;
+        }
+    }
+}
+
+.carrito_suma {
+    text-align: end;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+    .suma_subtotal_texto {
+        grid-row: 1/2;
+        grid-column: 4/5;
+        & + p {
+            grid-row: 1/2;
+            grid-column: 5/6;
+        }
+    }
+    .suma_envio_texto {
+        grid-row: 2/3;
+        grid-column: 4/5;
+        & + p {
+            grid-row: 2/3;
+            grid-column: 5/6;
+        }
+    }
+    .linea {
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: gray;
+        grid-row: 3/4;
+        grid-column: 1/6;
+    }
+    .suma_total_texto {
+        grid-row: 4/5;
+        grid-column: 4/5;
+        & + b {
+            grid-row: 4/5;
+            grid-column: 5/6;
+        }
+    }
+    p,b {
+        margin: 10px 0;
+    }
+    
+}
 
 
 /*---------------------------
@@ -412,12 +506,12 @@
 
     .bienvenida {
         align-items: center;
-        justify-items: space-between;
-        grid-gap: 40px;
+        // justify-items: space-around;
+        // grid-gap: 40px;
         grid-template-columns: repeat(15, 1fr);
 
         .bienvenida__texto {
-            grid-column: 1/8;
+            grid-column: 1/9;
             text-align: left;
             p {
                 max-width: 45rem;
@@ -425,7 +519,7 @@
         }
 
         .bienvenida__imagen {
-            grid-column: 8/16;
+            grid-column: 9/16;
         }
     }
 
@@ -648,7 +742,6 @@
     .contenedor-tienda {
         
         .producto {
-
             .producto-imagen {
                 transition: all 0.15s ease;
 
