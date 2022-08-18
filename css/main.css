@@ -41,21 +41,17 @@
   transition: all 0.15s ease;
   padding: 1px 18px;
   margin-bottom: 30px;
-}
-
-.btn a {
-  all: unset;
-  font-size: 1.2rem;
-  text-align: center;
+  font-size: 1.2em;
+  color: red;
+  font-weight: 600;
 }
 
 .btn:hover {
   cursor: pointer;
   background-color: #fff;
   color: #79AEA3;
-  border: none;
-  -webkit-box-shadow: 2px 2px 10px lightgrey;
-          box-shadow: 2px 2px 10px lightgrey;
+  -webkit-box-shadow: 0px 0px 10px 0px lightgrey;
+          box-shadow: 0px 0px 10px 0px lightgrey;
 }
 
 .btn:active {
@@ -71,6 +67,26 @@
 .btn_secundario {
   background-color: #79AEA3;
   color: #e0fbfc;
+}
+
+.popup {
+  position: fixed;
+  top: 12vh;
+  right: 20px;
+  max-width: 150px;
+  background-color: #79AEA3;
+  padding: 10px;
+  text-align: center;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.popup p {
+  font-size: 1.4rem;
+  color: #fff;
 }
 
 html {
@@ -94,12 +110,12 @@ html body main {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   padding-bottom: 10rem;
+  position: relative;
 }
 
 html h1, html h2 {
   font-size: 4rem;
   font-weight: 700;
-  font-stretch: condensed;
   line-height: 33px;
   display: inline-block;
   color: #143642;
@@ -112,13 +128,15 @@ html h2 {
 
 html p,
 html b {
-  font-size: 1.65rem;
+  font-size: 1.7rem;
   line-height: 1.3;
   color: #646464;
 }
 
 html a {
   text-decoration: none;
+  all: unset;
+  cursor: pointer;
 }
 
 html ul {
@@ -227,6 +245,7 @@ header .header__contenedor .header__menu ul li a:focus {
 }
 
 header .header__contenedor .header__menu ul li a .carrito-icono {
+  position: relative;
   left: 0;
   top: 0;
   max-width: 30px;
@@ -246,7 +265,9 @@ header .header__contenedor .header__menu ul li a .carrito-icono img {
 }
 
 header .header__contenedor .header__menu ul li a .carrito-icono p {
-  margin-top: -10px;
+  position: absolute;
+  top: 0;
+  left: 100%;
   font-size: 1rem;
   font-weight: 600;
   color: #fff;
@@ -352,7 +373,7 @@ header .header__contenedor .nav-toggle-label span::after {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   header .header__contenedor .header__menu ul li a {
     opacity: 1;
@@ -987,7 +1008,7 @@ footer .footer__contenedor .footer__telefono {
   font-size: 1.8em;
 }
 
-.item_carrito .item_label {
+.body_carrito .item_label {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[5];
@@ -995,13 +1016,13 @@ footer .footer__contenedor .footer__telefono {
   text-align: center;
 }
 
-.item_carrito .item_label .label_titulo {
+.body_carrito .item_label .label_titulo {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
 }
 
-.item_carrito .item_data {
+.body_carrito .item_data {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[5];
@@ -1012,7 +1033,7 @@ footer .footer__contenedor .footer__telefono {
           align-items: center;
 }
 
-.item_carrito .item_data .item_img {
+.body_carrito .item_data .item_img {
   max-width: 80px;
   margin: 20px;
 }
@@ -1121,6 +1142,7 @@ footer .footer__contenedor .footer__telefono {
     -ms-grid-column-span: 8;
     grid-column: 1/9;
     text-align: left;
+    padding: 20px;
   }
   .bienvenida .bienvenida__texto p {
     max-width: 45rem;
@@ -1298,6 +1320,7 @@ footer .footer__contenedor .footer__telefono {
     padding-bottom: 10rem;
     padding-left: 15rem;
     padding-right: 15rem;
+    margin: 50px 80px;
   }
   .opiniones {
     padding-top: 10rem;

@@ -67,6 +67,7 @@ header {
                         }
                         
                         .carrito-icono {
+                            position: relative;
                             left: 0;
                             top: 0;
                             max-width: 30px;
@@ -79,7 +80,9 @@ header {
                                 align-self: start;
                             }
                             p {
-                                margin-top: -10px;
+                                position: absolute;
+                                top: 0;
+                                left: 100%;
                                 font-size: 1rem;
                                 font-weight: 600;
                                 color: $color-background;
@@ -176,7 +179,7 @@ header {
                 li {
                     display: flex;
                     flex-direction: column;
-                    font-size: 1.5rem;
+                    font-size: 1.6rem;
 
                     a {
                         opacity: 1;

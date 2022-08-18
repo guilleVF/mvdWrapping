@@ -17,7 +17,7 @@ class Producto {
                             <p class="producto-descripcion">${this.descripcion}</p>
                             </div>
                             <div class="producto-abajo"><h3 class="producto-precio">US$ ${this.precio}</h3>
-                            <div id=${this.id} class="btn btn_tienda btn_primario"><a href="#carrito"><h3>Agregar al carrito</h2></a></div>
+                            <a href=#><div id=${this.id} class="btn btn_tienda btn_primario"><h3>Agregar al carrito</h2></div></a>
                             </div>`;
         
         let contenedor = document.querySelector(".contenedor-tienda");
@@ -26,86 +26,134 @@ class Producto {
 }
 
 
-
-class Carrito {
-    constructor() {
-        this.agregados = [];
-        this.subTotal = 0;
-    }
-    
-    agregarProducto(item) {
-        // Si el producto no se encuentra en el carrito, lo agregamos y lo mostramos en el carrito. De lo contrario aumentamos su cantidad en 1
-        contadorCarrito++;
-        let existe = this.agregados.some(x => x.id == item.id);
-        if (!existe) {
-            this.agregados.push(item);
-            // Nos conectamos al elemento contenedor
-            let itemCarrito = document.querySelector(".item_carrito");
-            // Creamos el elemento que vamos a insertar en la página de carrito
-            let content = document.createElement("div");
-            content.className = "item_data";
-            content.id = `carrito${item.id}`;
-            content.innerHTML = `<div class="item_img"><img src="../img/tienda/${item.id}.png" alt=""></div>
-                                <div class="item_titulo"><p>${item.titulo}</p></div>
-                                <div class="item_cantidad"><p>${item.cantidad}</p></div>
-                                <div class="item_precio"><p>US$ ${item.precio}</p></div>
-                                <div class="item_precioSuma"><p>US$ ${item.precio}</p></div>`;
-            // Agregamos el contenido a la página
-            itemCarrito.appendChild(content);
-        } else {
-            // Aumentamos la cantidad de ese producto
-            item.cantidad++;
-        } 
-        this.actualizarCarrito(item);
-    }
-
-    actualizarCarrito(item) {
-
-                // Actualizamos la cantidad y suma de este producto
-                let item_cantidad = document.querySelector(`#carrito${item.id} .item_cantidad p`);
-                item_cantidad.innerHTML = `${item.cantidad}`;
-                let item_precioSuma = document.querySelector(`#carrito${item.id} .item_precioSuma p`);
-                let suma = item.precio * item.cantidad;
-                item_precioSuma.innerHTML = `US$ ${suma}`; 
-        
-                // Cambiamos el núnero que figura junto al icono de carrito
-                let numeroCarrito = document.querySelector(".numeroCarrito");
-                numeroCarrito.innerHTML = contadorCarrito;
-                // Acutalizamos el subtotal y total en el carrito
-                this.subTotal += item.precio;
-                let subTotal = document.querySelector(".suma_subtotal_data");
-                subTotal.innerHTML = `US$ ${this.subTotal}`;
-                let total = document.querySelector(".suma_total_data");
-                let sumaTotal = 10 + this.subTotal;
-                total.innerHTML = `US$ ${sumaTotal}`;
-    }
-
-    devolverTotal() {
-        this.agregados.forEach(x => console.log(x));
-        return(`Tiene ${contadorCarrito} items en el carro que suman un total de $${this.total}`); 
-    }
-}
-
-
-
 function nuevoProducto (titulo, descripcion, precio) {
     const producto = new Producto (contadorId, titulo, descripcion, precio);
     listaProductos.push(producto);
     contadorId++;
+    
+    if (localStorage.getItem("productos")) {
+        let productos = JSON.parse(localStorage.getItem("productos"));
+        productos.push(producto);
+        localStorage.setItem("productos", JSON.stringify(productos));
+    } else {
+        let productos = [];
+        productos.push(producto);
+        localStorage.setItem("productos", JSON.stringify(productos));
+    }
 }
 
 
+function addToCarrito(id) {
 
-function buscarProducto(id) {
-    let resultado = listaProductos.find(x => x.id == id);
-    return resultado;
+    // Chequeamos si existe el carrito en el localstorage
+    if (localStorage.getItem("carrito")) {
+        let carrito = JSON.parse(localStorage.getItem("carrito"));
+
+        // Aumentamos el contador de carrito
+        let contadorCarrito = JSON.parse(localStorage.getItem("contadorCarrito"));
+        contadorCarrito++;
+        localStorage.setItem("contadorCarrito", JSON.stringify(contadorCarrito));
+        
+        // Existe un elemento en el carrito que coincida con el id que estoy agregando?
+        for (let i of carrito) {
+            if (i.id == id) {
+                // Si existe, aumentamos su cantidad
+                i.cantidad++;
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+
+                actualizarCarrito();
+                mostrarPopup("Producto agregado correctamente");
+                return;
+            }
+        }
+        // Si no existe, vamos a la lista de productos, buscamos el elemento que necesitamos, y lo agregamos al carrito
+        let productos = JSON.parse(localStorage.getItem("productos"));
+        for (let i of productos) {
+            if (i.id == id) {
+                carrito.push(i);
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+
+                actualizarCarrito();
+                mostrarPopup("Producto agregado correctamente");
+                return;
+            }
+        }
+
+    // Si no existe el carrito, creamos uno y agregamos el elemento
+    } else {
+        let carrito = [];
+        let productos = JSON.parse(localStorage.getItem("productos"));
+
+        for (let i of productos) {
+            if (i.id == id) {
+                carrito.push(i);
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+            }
+        }        
+
+        let contadorCarrito = 1;
+        localStorage.setItem("contadorCarrito", JSON.stringify(contadorCarrito));
+
+        actualizarCarrito();
+        mostrarPopup("Producto agregado correctamente");
+    }
+}
+
+
+function actualizarCarrito() {
+
+    if (localStorage.getItem("carrito")) {
+        // Nos conectamos al elemento contenedor del carrito
+        let bodyCarrito = document.querySelector(".body_carrito");
+        // Creamos los títulos
+        bodyCarrito.innerHTML = `<h3>Productos en tu carrito</h3>
+                                <div class="item_label">
+                                <b class="label_titulo">Item</b>
+                                <b class="label_cantidad">Cantidad</b>
+                                <b class="label_precio">Precio unitario</b>
+                                <b class="label_suma">Suma</b>
+                                </div>
+                                <hr>
+                                `;
+        // Para cada elemento en el carrito, creamos una nueva fila con la info y la insertamos en en carrito
+        let carrito = JSON.parse(localStorage.getItem("carrito"));
+        let subTotal = 0;
+
+        for (let item of carrito) {
+            let precioSuma = item.precio * item.cantidad;
+            subTotal = subTotal + precioSuma; 
+            let item_data = document.createElement("div");
+            item_data.className = "item_data";
+            item_data.innerHTML = `
+                                <div class="item_img"><img src="../img/tienda/${item.id}.png" alt=""></div>
+                                <div class="item_titulo"><p>${item.titulo}</p></div>
+                                <div class="item_cantidad"><p>${item.cantidad}</p></div>
+                                <div class="item_precio"><p>US$ ${item.precio}</p></div>
+                                <div class="item_precioSuma"><p>US$ ${precioSuma}</p></div>
+                                `;
+            // Agregamos el contenido a la página
+            bodyCarrito.appendChild(item_data);
+        }
+        let envio = 10;
+
+        let total = envio + subTotal;
+    
+        let carrito_suma = document.createElement("div");
+        carrito_suma.className = "carrito_suma";
+        carrito_suma.innerHTML = `
+                                <p class="suma_subtotal_texto">Subtotal</p><p class="suma_subtotal_data">US$ ${subTotal}</p>
+                                <p class="suma_envio_texto">Envío</p><p class="suma_envio_data">US$ 10</p>
+                                <div class="linea"></div>
+                                <b class="suma_total_texto">Total</b><b class="suma_total_data">US$ ${total}</b>
+                                `;
+        bodyCarrito.append(carrito_suma);
+    } 
 }
 
 
 
 let listaProductos = [];
 let contadorId = 0;
-let contadorCarrito = 0;
 
 // Creamos productos de prueba y los agregamos a la lista de productos
 nuevoProducto("Casco LS2 Carbon", "Casco de fibra de carbono diseñado para ruta", 570);
@@ -118,13 +166,14 @@ for (let producto of listaProductos) {
     producto.enlistarProducto();
 }
 
-const carrito = new Carrito;
-
 // Escuchamos el evento click en los botones de la tienda
 let btn_tienda = document.getElementsByClassName("btn_tienda");
 
 for (let btn of btn_tienda) {
-    btn.addEventListener("click", () => {carrito.agregarProducto(buscarProducto(btn.id))});
+    btn.addEventListener("click", () => {addToCarrito(btn.id)});
 }
+
+// Actualizamos el carrito cada vez que cargamos la página
+actualizarCarrito();
 
 
