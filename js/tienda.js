@@ -155,12 +155,12 @@ function deleteFromCarrito(id) {
 
 function actualizarCarrito() {
 
-    carrito = JSON.parse(localStorage.getItem("carrito"));
-    if (carrito.length == 0) {
-        localStorage.removeItem("carrito");
-        let bodyCarrito = document.querySelector(".body_carrito");
-        bodyCarrito.innerHTML = "";
-    }
+    // carrito = JSON.parse(localStorage.getItem("carrito"));
+    // if (carrito.length == 0) {
+    //     localStorage.removeItem("carrito");
+    //     let bodyCarrito = document.querySelector(".body_carrito");
+    //     bodyCarrito.innerHTML = "";
+    // }
 
     if (localStorage.getItem("carrito")) {
         // Nos conectamos al elemento contenedor del carrito
