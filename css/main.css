@@ -173,8 +173,8 @@ header {
   background-color: rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
-  -webkit-transition: top 0.5s;
-  transition: top 0.5s;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
 }
 
 header p {
@@ -1036,6 +1036,18 @@ footer .footer__contenedor .footer__telefono {
 .body_carrito .item_data .item_img {
   max-width: 80px;
   margin: 20px;
+}
+
+.body_carrito .item_data .item_precioSuma {
+  position: relative;
+}
+
+.body_carrito .item_data .item_precioSuma img {
+  position: absolute;
+  max-width: 40px;
+  right: 10px;
+  top: 8px;
+  cursor: pointer;
 }
 
 .carrito_suma {

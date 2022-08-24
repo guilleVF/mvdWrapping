@@ -437,6 +437,16 @@
             max-width: 80px;
             margin: 20px;
         }
+        .item_precioSuma {
+            position: relative;
+            img {
+                position: absolute;
+                max-width: 40px;
+                right: 10px;
+                top: 8px;
+                cursor: pointer;
+            }
+        }
     }
 }
 

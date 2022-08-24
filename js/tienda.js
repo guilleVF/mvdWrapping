@@ -17,7 +17,7 @@ class Producto {
                             <p class="producto-descripcion">${this.descripcion}</p>
                             </div>
                             <div class="producto-abajo"><h3 class="producto-precio">US$ ${this.precio}</h3>
-                            <a href=#><div id=${this.id} class="btn btn_tienda btn_primario"><h3>Agregar al carrito</h2></div></a>
+                            <a><div id=${this.id} class="btn btn_tienda btn_primario"><h3>Agregar al carrito</h2></div></a>
                             </div>`;
         
         let contenedor = document.querySelector(".contenedor-tienda");
@@ -62,7 +62,15 @@ function addToCarrito(id) {
                 localStorage.setItem("carrito", JSON.stringify(carrito));
 
                 actualizarCarrito();
-                mostrarPopup("Producto agregado correctamente");
+                // mostrarPopup("Producto agregado correctamente");
+                Toastify({
+
+                    text: "Producto agregado al carrito",
+                    
+                    duration: 3000,
+                    
+                    style: {background: "#79AEA3", color: "fff"}
+                    }).showToast();
                 return;
             }
         }
@@ -74,7 +82,15 @@ function addToCarrito(id) {
                 localStorage.setItem("carrito", JSON.stringify(carrito));
 
                 actualizarCarrito();
-                mostrarPopup("Producto agregado correctamente");
+                // mostrarPopup("Producto agregado correctamente");
+                Toastify({
+
+                    text: "Producto agregado al carrito",
+                    
+                    duration: 3000,
+                    
+                    style: {background: "#79AEA3", color: "fff"}
+                    }).showToast();
                 return;
             }
         }
@@ -95,12 +111,56 @@ function addToCarrito(id) {
         localStorage.setItem("contadorCarrito", JSON.stringify(contadorCarrito));
 
         actualizarCarrito();
-        mostrarPopup("Producto agregado correctamente");
+        // mostrarPopup("Producto agregado correctamente");
+        Toastify({
+
+            text: "Producto agregado al carrito",
+            
+            duration: 3000,
+            
+            style: {background: "#79AEA3", color: "fff"}
+            }).showToast();
     }
 }
 
 
+
+function deleteFromCarrito(id) {
+    console.log(id);
+    // Nos conectamos al botón delete del elemento
+    let carrito = JSON.parse(localStorage.getItem("carrito"));
+    
+    for (let item of carrito) {
+        if (item.id == id) {
+            let index = carrito.indexOf(item);
+            carrito.splice(index, 1);
+        }
+    }
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    Toastify({
+
+        text: "Producto eliminado del carrito",
+        
+        duration: 3000,
+        
+        style: {background: "#79AEA3", color: "fff"}
+        }).showToast();
+
+    actualizarCarrito();
+}
+
+
+
+
 function actualizarCarrito() {
+
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+    if (carrito.length == 0) {
+        localStorage.removeItem("carrito");
+        let bodyCarrito = document.querySelector(".body_carrito");
+        bodyCarrito.innerHTML = "";
+    }
 
     if (localStorage.getItem("carrito")) {
         // Nos conectamos al elemento contenedor del carrito
@@ -129,7 +189,7 @@ function actualizarCarrito() {
                                 <div class="item_titulo"><p>${item.titulo}</p></div>
                                 <div class="item_cantidad"><p>${item.cantidad}</p></div>
                                 <div class="item_precio"><p>US$ ${item.precio}</p></div>
-                                <div class="item_precioSuma"><p>US$ ${precioSuma}</p></div>
+                                <div class="item_precioSuma"><p>US$ ${precioSuma}</p><img src="../img/delete.svg" id="${item.id}" class="btn_deleteItem"></img></div>
                                 `;
             // Agregamos el contenido a la página
             bodyCarrito.appendChild(item_data);
@@ -147,7 +207,15 @@ function actualizarCarrito() {
                                 <b class="suma_total_texto">Total</b><b class="suma_total_data">US$ ${total}</b>
                                 `;
         bodyCarrito.append(carrito_suma);
-    } 
+
+        // Escuchamos el evento click en los botones de elimiar items
+        let btn_deleteItem = document.getElementsByClassName("btn_deleteItem");
+        
+        for (let btn of btn_deleteItem) {
+            btn.addEventListener("click", () => {deleteFromCarrito(btn.id)})
+        }
+    }
+
 }
 
 
@@ -170,10 +238,18 @@ for (let producto of listaProductos) {
 let btn_tienda = document.getElementsByClassName("btn_tienda");
 
 for (let btn of btn_tienda) {
+    // console.log(btn);
     btn.addEventListener("click", () => {addToCarrito(btn.id)});
 }
 
 // Actualizamos el carrito cada vez que cargamos la página
 actualizarCarrito();
+
+
+
+
+
+
+
 
 
