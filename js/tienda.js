@@ -126,7 +126,6 @@ function addToCarrito(id) {
 
 
 function deleteFromCarrito(id) {
-    console.log(id);
     // Nos conectamos al botón delete del elemento
     let carrito = JSON.parse(localStorage.getItem("carrito"));
     
@@ -164,21 +163,28 @@ function actualizarCarrito() {
 
     if (localStorage.getItem("carrito")) {
         // Nos conectamos al elemento contenedor del carrito
-        let bodyCarrito = document.querySelector(".body_carrito");
-        // Creamos los títulos
-        bodyCarrito.innerHTML = `<h3>Productos en tu carrito</h3>
-                                <div class="item_label">
-                                <b class="label_titulo">Item</b>
-                                <b class="label_cantidad">Cantidad</b>
-                                <b class="label_precio">Precio unitario</b>
-                                <b class="label_suma">Suma</b>
-                                </div>
-                                <hr>
-                                `;
-        // Para cada elemento en el carrito, creamos una nueva fila con la info y la insertamos en en carrito
+
         let carrito = JSON.parse(localStorage.getItem("carrito"));
+        let bodyCarrito = document.querySelector(".body_carrito");
+        if (carrito.length > 0) {
+            // Creamos los títulos
+            bodyCarrito.innerHTML = `<h3>Productos en tu carrito</h3>
+                                    <div class="item_label">
+                                    <b class="label_titulo">Item</b>
+                                    <b class="label_cantidad">Cantidad</b>
+                                    <b class="label_precio">Precio unitario</b>
+                                    <b class="label_suma">Suma</b>
+                                    </div>
+                                    <hr>
+                                    `;
+        } else {
+            bodyCarrito.innerHTML = "";
+            return;
+        }   
+        
         let subTotal = 0;
 
+        // Para cada elemento en el carrito, creamos una nueva fila con la info y la insertamos en en carrito
         for (let item of carrito) {
             let precioSuma = item.precio * item.cantidad;
             subTotal = subTotal + precioSuma; 
@@ -214,8 +220,7 @@ function actualizarCarrito() {
         for (let btn of btn_deleteItem) {
             btn.addEventListener("click", () => {deleteFromCarrito(btn.id)})
         }
-    }
-
+    } 
 }
 
 
