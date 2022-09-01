@@ -1,4 +1,5 @@
 class Producto {
+
     constructor (id, titulo, descripcion, precio) {
         this.id = id;
         this.image = `../img/tienda/${this.id}.png`;
@@ -7,17 +8,20 @@ class Producto {
         this.precio = precio;
         this.cantidad = 1;
     }
+}
 
-    enlistarProducto() {
+function enlistarProductos() {
+   
+    for (let producto of listaProductos) {
         let tarjeta = document.createElement("div");
         tarjeta.className = "producto";
         tarjeta.id = this.id;
-        tarjeta.innerHTML = `<div class="producto-arriba"><img class="producto-imagen"src=${this.image}>
-                            <h4 class="producto-titulo">${this.titulo}</h4>
-                            <p class="producto-descripcion">${this.descripcion}</p>
+        tarjeta.innerHTML = `<div class="producto-arriba"><img class="producto-imagen"src=${producto.image}>
+                            <h4 class="producto-titulo">${producto.titulo}</h4>
+                            <p class="producto-descripcion">${producto.descripcion}</p>
                             </div>
-                            <div class="producto-abajo"><h3 class="producto-precio">US$ ${this.precio}</h3>
-                            <a><div id=${this.id} class="btn btn_tienda btn_primario"><h3>Agregar al carrito</h2></div></a>
+                            <div class="producto-abajo"><h3 class="producto-precio">US$ ${producto.precio}</h3>
+                            <a><div id=${producto.id} class="btn btn_tienda btn_primario noselect"><h3>Agregar al carrito</h2></div></a>
                             </div>`;
         
         let contenedor = document.querySelector(".contenedor-tienda");
@@ -25,21 +29,32 @@ class Producto {
     }
 }
 
+function productoExiste(titulo, id) {
+
+    let productos = JSON.parse(localStorage.getItem("productos"));
+    for (let i in productos) {
+        if (i.titulo == titulo || i.id == id) {
+            return true;
+        }
+        return false;
+    }
+} 
 
 function nuevoProducto (titulo, descripcion, precio) {
+
     const producto = new Producto (contadorId, titulo, descripcion, precio);
-    listaProductos.push(producto);
-    contadorId++;
     
     if (localStorage.getItem("productos")) {
-        let productos = JSON.parse(localStorage.getItem("productos"));
-        productos.push(producto);
-        localStorage.setItem("productos", JSON.stringify(productos));
+        if (!productoExiste(titulo, -1)) {
+            listaProductos.push(producto);
+            localStorage.setItem("productos", JSON.stringify(listaProductos));
+            contadorId++;
+        }
     } else {
-        let productos = [];
-        productos.push(producto);
-        localStorage.setItem("productos", JSON.stringify(productos));
+        listaProductos.push(producto);
+        localStorage.setItem("productos", JSON.stringify(listaProductos));
     }
+    return producto;
 }
 
 
@@ -62,15 +77,15 @@ function addToCarrito(id) {
                 localStorage.setItem("carrito", JSON.stringify(carrito));
 
                 actualizarCarrito();
-                // mostrarPopup("Producto agregado correctamente");
-                Toastify({
+                mostrarPopup("Producto agregado correctamente");
+                // Toastify({
 
-                    text: "Producto agregado al carrito",
+                //     text: "Producto agregado al carrito",
                     
-                    duration: 3000,
+                //     duration: 3000,
                     
-                    style: {background: "#79AEA3", color: "fff"}
-                    }).showToast();
+                //     style: {background: "#79AEA3", color: "fff"}
+                //     }).showToast();
                 return;
             }
         }
@@ -82,15 +97,15 @@ function addToCarrito(id) {
                 localStorage.setItem("carrito", JSON.stringify(carrito));
 
                 actualizarCarrito();
-                // mostrarPopup("Producto agregado correctamente");
-                Toastify({
+                mostrarPopup("Producto agregado correctamente");
+                // Toastify({
 
-                    text: "Producto agregado al carrito",
+                //     text: "Producto agregado al carrito",
                     
-                    duration: 3000,
+                //     duration: 3000,
                     
-                    style: {background: "#79AEA3", color: "fff"}
-                    }).showToast();
+                //     style: {background: "#79AEA3", color: "fff"}
+                //     }).showToast();
                 return;
             }
         }
@@ -111,15 +126,15 @@ function addToCarrito(id) {
         localStorage.setItem("contadorCarrito", JSON.stringify(contadorCarrito));
 
         actualizarCarrito();
-        // mostrarPopup("Producto agregado correctamente");
-        Toastify({
+        mostrarPopup("Producto agregado correctamente");
+        // Toastify({
 
-            text: "Producto agregado al carrito",
+        //     text: "Producto agregado al carrito",
             
-            duration: 3000,
+        //     duration: 3000,
             
-            style: {background: "#79AEA3", color: "fff"}
-            }).showToast();
+        //     style: {background: "#79AEA3", color: "fff"}
+        //     }).showToast();
     }
 }
 
@@ -137,29 +152,21 @@ function deleteFromCarrito(id) {
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    Toastify({
+    // Toastify({
 
-        text: "Producto eliminado del carrito",
+    //     text: "Producto eliminado del carrito",
         
-        duration: 3000,
+    //     duration: 3000,
         
-        style: {background: "#79AEA3", color: "fff"}
-        }).showToast();
+    //     style: {background: "#79AEA3", color: "fff"}
+    //     }).showToast();
 
     actualizarCarrito();
 }
 
 
 
-
 function actualizarCarrito() {
-
-    // carrito = JSON.parse(localStorage.getItem("carrito"));
-    // if (carrito.length == 0) {
-    //     localStorage.removeItem("carrito");
-    //     let bodyCarrito = document.querySelector(".body_carrito");
-    //     bodyCarrito.innerHTML = "";
-    // }
 
     if (localStorage.getItem("carrito")) {
         // Nos conectamos al elemento contenedor del carrito
@@ -223,32 +230,38 @@ function actualizarCarrito() {
     } 
 }
 
-
-
-let listaProductos = [];
-let contadorId = 0;
-
-// Creamos productos de prueba y los agregamos a la lista de productos
-nuevoProducto("Casco LS2 Carbon", "Casco de fibra de carbono diseñado para ruta", 570);
-nuevoProducto("Casco LS2 Arrow", "Casco de alto rendimiento para pilotos", 440);
-nuevoProducto("Casco LS2 Pioneer", "Casco de competición ultra liviano", 480);
-nuevoProducto("Casco LS2 X-FORCE", "Casco de cross en fibra de carbono", 500);
-
-// Los mostramos en la página
-for (let producto of listaProductos) {
-    producto.enlistarProducto();
+async function obtenerProductos() {
+    // Obtenemos la lista de productos del archivo json y devolvemos un array de productos
+    return fetch('../assets/productos.json')
+    .then(response => response.json())  
+    .then(response => {
+        for (i of response) {
+            // Creamos los productos a partir del archuvo json
+            let producto = nuevoProducto(i.nombre, i.descripcion, parseInt(i.precio));
+        }
+    });
 }
 
-// Escuchamos el evento click en los botones de la tienda
-let btn_tienda = document.getElementsByClassName("btn_tienda");
+async function main() {
 
-for (let btn of btn_tienda) {
-    // console.log(btn);
-    btn.addEventListener("click", () => {addToCarrito(btn.id)});
+    listaProductos = [];
+    contadorId = 0;
+
+    await obtenerProductos();
+    
+    enlistarProductos();
+    // Escuchamos el evento click en los botones de la tienda
+    let btn_tienda = document.getElementsByClassName("btn_tienda");
+    for (let btn of btn_tienda) {
+        console.log(btn);
+        btn.addEventListener("click", () => {addToCarrito(btn.id)});
+    }   
+
+    actualizarCarrito();
 }
 
-// Actualizamos el carrito cada vez que cargamos la página
-actualizarCarrito();
+
+main();
 
 
 
