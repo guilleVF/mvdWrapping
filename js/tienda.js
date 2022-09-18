@@ -1,3 +1,4 @@
+
 class Producto {
 
     constructor (id, titulo, descripcion, precio) {
@@ -63,11 +64,6 @@ function addToCarrito(id) {
     // Chequeamos si existe el carrito en el localstorage
     if (localStorage.getItem("carrito")) {
         let carrito = JSON.parse(localStorage.getItem("carrito"));
-
-        // Aumentamos el contador de carrito
-        let contadorCarrito = JSON.parse(localStorage.getItem("contadorCarrito"));
-        contadorCarrito++;
-        localStorage.setItem("contadorCarrito", JSON.stringify(contadorCarrito));
         
         // Existe un elemento en el carrito que coincida con el id que estoy agregando?
         for (let i of carrito) {
@@ -78,14 +74,6 @@ function addToCarrito(id) {
 
                 actualizarCarrito();
                 mostrarPopup("Producto agregado correctamente");
-                // Toastify({
-
-                //     text: "Producto agregado al carrito",
-                    
-                //     duration: 3000,
-                    
-                //     style: {background: "#79AEA3", color: "fff"}
-                //     }).showToast();
                 return;
             }
         }
@@ -98,14 +86,6 @@ function addToCarrito(id) {
 
                 actualizarCarrito();
                 mostrarPopup("Producto agregado correctamente");
-                // Toastify({
-
-                //     text: "Producto agregado al carrito",
-                    
-                //     duration: 3000,
-                    
-                //     style: {background: "#79AEA3", color: "fff"}
-                //     }).showToast();
                 return;
             }
         }
@@ -122,19 +102,8 @@ function addToCarrito(id) {
             }
         }        
 
-        let contadorCarrito = 1;
-        localStorage.setItem("contadorCarrito", JSON.stringify(contadorCarrito));
-
         actualizarCarrito();
         mostrarPopup("Producto agregado correctamente");
-        // Toastify({
-
-        //     text: "Producto agregado al carrito",
-            
-        //     duration: 3000,
-            
-        //     style: {background: "#79AEA3", color: "fff"}
-        //     }).showToast();
     }
 }
 
@@ -152,21 +121,14 @@ function deleteFromCarrito(id) {
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    // Toastify({
-
-    //     text: "Producto eliminado del carrito",
-        
-    //     duration: 3000,
-        
-    //     style: {background: "#79AEA3", color: "fff"}
-    //     }).showToast();
-
     actualizarCarrito();
 }
 
 
 
 function actualizarCarrito() {
+
+    actualizarIconoCarrito();
 
     if (localStorage.getItem("carrito")) {
         // Nos conectamos al elemento contenedor del carrito
@@ -190,7 +152,7 @@ function actualizarCarrito() {
         }   
         
         let subTotal = 0;
-
+        let itemsEnCarrito = 0;
         // Para cada elemento en el carrito, creamos una nueva fila con la info y la insertamos en en carrito
         for (let item of carrito) {
             let precioSuma = item.precio * item.cantidad;
@@ -206,7 +168,9 @@ function actualizarCarrito() {
                                 `;
             // Agregamos el contenido a la página
             bodyCarrito.appendChild(item_data);
+            itemsEnCarrito += item.cantidad;
         }
+
         let envio = 10;
 
         let total = envio + subTotal;
@@ -227,7 +191,8 @@ function actualizarCarrito() {
         for (let btn of btn_deleteItem) {
             btn.addEventListener("click", () => {deleteFromCarrito(btn.id)})
         }
-    } 
+    }
+    actualizarIconoCarrito();
 }
 
 async function obtenerProductos() {
@@ -253,7 +218,6 @@ async function main() {
     // Escuchamos el evento click en los botones de la tienda
     let btn_tienda = document.getElementsByClassName("btn_tienda");
     for (let btn of btn_tienda) {
-        console.log(btn);
         btn.addEventListener("click", () => {addToCarrito(btn.id)});
     }   
 

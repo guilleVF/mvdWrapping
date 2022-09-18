@@ -412,7 +412,7 @@
                             CARRITO
                     ----------------------*/
 .body_carrito {
-    @include content-spacing-desktop;
+    padding: 0 15rem;
 
     h3 {
         margin-bottom: 60px;

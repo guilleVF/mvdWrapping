@@ -19,10 +19,25 @@ window.onscroll = function() {
     }
 
     prevScrollpos = currentScrollPos;
-
 }
 
+function actualizarIconoCarrito() {
+    // Reseteamos el contador en el icono carrito
+    let numeroCarrito = document.querySelector(".numeroCarrito");
+    numeroCarrito.innerHTML = "";
+    let itemsEnCarrito = 0;
+    if (localStorage.getItem("carrito")) {
+        let carrito = JSON.parse(localStorage.getItem("carrito"));
+        for (let item of carrito) {
+            itemsEnCarrito += item.cantidad;
+        }
+        // Actualizamos la cantidad de elementos agregados en el icono de carrito
+        let numeroCarrito = document.querySelector(".numeroCarrito");
+        numeroCarrito.innerHTML = `${itemsEnCarrito}`; 
+    }
+}
 
+actualizarIconoCarrito();
 
 
 
