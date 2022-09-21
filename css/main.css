@@ -106,6 +106,51 @@
   color: #fff;
 }
 
+.swiper {
+  width: 90%;
+  margin-top: 10em;
+  max-width: 900px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 2%;
+}
+
+.swiper .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.swiper .swiper-slide {
+  padding: 2em 3vw;
+}
+
+.swiper .swiper-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 2%;
+}
+
+.swiper .swiper-pagination-progressbar {
+  padding-top: 8px;
+}
+
+.swiper .swiper-pagination-progressbar-fill {
+  background-color: #81D8D0 !important;
+  color: red;
+}
+
+.swiper .swiper-button-next {
+  color: lightgray;
+}
+
+.swiper .swiper-button-prev {
+  color: lightgray;
+}
+
 html {
   font-family: "Overpass", sans-serif;
   background-color: #fff;
@@ -524,7 +569,6 @@ footer .footer__contenedor .footer__telefono {
   position: relative;
   background-image: url("../img/front.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center center;
   width: 100%;
   min-height: 100vh;

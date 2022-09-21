@@ -5,6 +5,30 @@ function mostrarPopup (msg) {
     setTimeout( () => {document.querySelector(".popup").style = "visibility:hidden; opacity:0"}, 1800);
 }
 
+var image = document.getElementsByClassName('thumbnail');
+new simpleParallax(image, {
+    overflow: 'true',
+    delay: '0.5'
+});
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    speed:800,
+    autoplay:{delay: 3000},
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+  });
+
 
 // Escondemos el navbar al hacer scroll
 let prevScrollpos = window.pageYOffset;

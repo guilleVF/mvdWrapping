@@ -92,6 +92,39 @@
     }
 }
 
+.swiper {
+    width: 90%;
+    margin-top: 10em;
+    // height: auto;
+    max-width: 900px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 2%;
+    .swiper-wrapper {
+        display: flex;
+        align-items: center;
+    }
+    .swiper-slide {
+        padding: 2em 3vw;
+        img {
+            object-fit:cover;
+            border-radius: 2%;
+        }
+    }
+    .swiper-pagination-progressbar {
+        padding-top: 8px;
+    }
+    .swiper-pagination-progressbar-fill {
+        background-color: $color-primary-strong !important;
+        color: red;
+    }
+    .swiper-button-next {
+        color: lightgray;
+    }
+    .swiper-button-prev {
+        color: lightgray;
+    }
+}
+
 
 html {
 	font-family: "Overpass", sans-serif;
