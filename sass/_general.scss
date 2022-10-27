@@ -93,38 +93,54 @@
 }
 
 .swiper {
-    width: 90%;
-    margin-top: 10em;
-    // height: auto;
     max-width: 900px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    border-radius: 2%;
     .swiper-wrapper {
         display: flex;
         align-items: center;
     }
     .swiper-slide {
-        padding: 2em 3vw;
+        padding: 2em 0;
         img {
             object-fit:cover;
-            border-radius: 2%;
+            border-radius: 1%;
         }
     }
-    .swiper-pagination-progressbar {
-        padding-top: 8px;
+    .swiper-pagination {
+        margin: 2em 0;  
     }
-    .swiper-pagination-progressbar-fill {
-        background-color: $color-primary-strong !important;
-        color: red;
+    .swiper-pagination-bullet-active {
+        background-color: $color-primary;
     }
     .swiper-button-next {
-        color: lightgray;
+        color: grey;
+        &::after {
+            font-size: 1.8em;
+        }
     }
     .swiper-button-prev {
-        color: lightgray;
+        color: grey;
+        &::after {
+            font-size: 1.8em;
+        }    
     }
 }
 
+.whatsapp {
+    img {
+        z-index: 1000;
+        position: fixed;
+        bottom: 100px;
+        right: 5vw;
+        width: 55px;
+        object-fit: cover;
+        filter: grayscale(40%) opacity(70%);
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
+        &:hover {
+            transform: scale(110%);
+        }
+    }
+}
 
 html {
 	font-family: "Overpass", sans-serif;
@@ -147,7 +163,7 @@ html {
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: 700;
         line-height: 33px;
         display: inline-block;

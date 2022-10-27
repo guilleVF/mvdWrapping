@@ -10,23 +10,8 @@
     width: 100%;
     min-height:100vh;
     display: flex;
-    filter: brightness(70%);
+    filter: brightness(85%);
     box-shadow: 0px 5px 20px lightgrey;
-
-    // .portada_texto {
-    //     position: absolute;
-    //     top: 80%;
-    //     left: 50%;
-    //     transform: translate(-50%, -50%);    
-    //     z-index: 999;
-    //     text-align: center;
-    //     max-width: 400px;
-    //     p {
-    //         font-size: 2.5em;
-    //         font-weight: 400;
-    //         color: white;
-    //     }  
-    // }
 
     .portada__logo {
         position: absolute;
@@ -76,7 +61,7 @@
         }
     }
 }
-
+ 
 
 .video{
     video {
@@ -87,6 +72,55 @@
     }
 }
 
+.galeria {
+    // padding: 1em 0;
+    h2 {
+        width: 100vw;
+        padding: 1em 1em;
+        background-color: $color-primary-strong;
+        text-align: center;
+    }
+    p {
+        padding: 1em 2em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.7em;
+        max-width: 700px;
+        margin: auto;
+        line-height: 2em;
+    }
+}
+
+.indexForm {
+    background-color: $color-text;
+    padding: 2em;
+    h2 {
+        color:$color-background;
+        text-align: center;
+    }
+    .contacto__form {
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        margin: auto;
+        & > * {
+            padding: 2em 0;
+            margin: 2em 0;
+            &::placeholder {
+                font-size: 1.3em;
+                padding: 0 1.5em;
+            }
+        }
+        .boton {
+            background-color: $color-primary;
+            color: $color-background;
+            font-weight: 900;
+            font-size: 1.5em;
+            padding: 1em;
+            border-radius: 5px;
+        }
+    }
+}
 
 .opiniones {
 	display: grid;
@@ -494,6 +528,60 @@
 }
 
 
+                    /*--------------------
+                            CARD
+                    ----------------------*/
+
+.personalCardContainer {
+    background-color: #f9f9fd;
+    background-size: 40px 40px;
+    background-image: repeating-linear-gradient(45deg, #79AEA3 0, #79AEA3 0.5px, #f9f9fd 0, #f9f9fd 50%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .personalCard {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+
+        .cardImg {
+            max-width: 60%;
+            padding-top: 50px;
+            img {
+                border-radius: 50%;
+            }
+        }
+        .cardInfo {
+            padding-top: 50px;
+            p {
+                text-align: center;
+                font-size: 2em;
+                font-weight: 700;
+                text-shadow: 0.5px 0.5px 3px lightgrey;
+            }
+            .nombre {
+                font-size: 3.2em;
+            }
+            .puesto {
+                p {
+                    text-decoration: underline;
+                }
+            }
+            .telefono {
+                padding-top: 2em;
+            }
+            .telefono, .direccion {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
 /*---------------------------
       BREAKPOINT 768px
 -----------------------------*/
@@ -536,8 +624,8 @@
         display: flex;
         justify-content: center;
         video {
-            height: 700px;
-            // object-fit: cover;
+            height: 1000px;
+            object-fit: cover;
         }
 }
 

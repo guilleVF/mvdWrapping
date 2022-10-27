@@ -10,7 +10,7 @@ header {
 	z-index: 999;
 	display: flex;
 	justify-content: space-between;
-	height: 8vh;
+	height: 9vh;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.6);
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
@@ -21,7 +21,7 @@ header {
     }
 
     .header__logo {              
-        padding: 1%;
+        padding: 2%;
         // max-height: 100%;
         height: auto;
     
@@ -59,7 +59,7 @@ header {
                         color: $color-background;
                         opacity: 0;
                         transition: opacity 150ms ease-in-out;
-                        font-weight: 700;
+                        font-weight: 500;
                 
                         &:focus {
                             color: $color-primary;
@@ -120,8 +120,8 @@ header {
             & span {
                 display: block;
                 background: white;
-                height: 2px;
-                width: 3.5rem;
+                height: 1.2px;
+                width: 3rem;
                 border-radius: 2px;
                 position: relative;
 
@@ -129,13 +129,13 @@ header {
                     @extend span;
                     content: '';
                     position: absolute;
-                    bottom: 12px;
+                    bottom: 8px;
                 }
                 &::after {
                     @extend span;
                     content: '';
                     position: absolute;
-                    top: 12px;
+                    top: 8px;
                 }
             }
         }

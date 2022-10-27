@@ -5,11 +5,19 @@ function mostrarPopup (msg) {
     setTimeout( () => {document.querySelector(".popup").style = "visibility:hidden; opacity:0"}, 1800);
 }
 
-var image = document.getElementsByClassName('thumbnail');
-new simpleParallax(image, {
-    overflow: 'true',
-    delay: '0.5'
-});
+// var image = document.getElementsByClassName('thumbnail');
+// new simpleParallax(image, {
+//     overflow: 'true',
+//     delay: '0.5'
+// });
+
+anime({
+    targets:'.logo_portada',
+    keyframes:[
+        {translateY: -550},
+        {translateY:0}
+    ]
+})
 
 const swiper = new Swiper('.swiper', {
     // Optional parameters
@@ -21,7 +29,6 @@ const swiper = new Swiper('.swiper', {
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
-      type: 'progressbar',
     },
     navigation: {
         nextEl: '.swiper-button-next',
@@ -45,23 +52,23 @@ window.onscroll = function() {
     prevScrollpos = currentScrollPos;
 }
 
-function actualizarIconoCarrito() {
-    // Reseteamos el contador en el icono carrito
-    let numeroCarrito = document.querySelector(".numeroCarrito");
-    numeroCarrito.innerHTML = "";
-    let itemsEnCarrito = 0;
-    if (localStorage.getItem("carrito")) {
-        let carrito = JSON.parse(localStorage.getItem("carrito"));
-        for (let item of carrito) {
-            itemsEnCarrito += item.cantidad;
-        }
-        // Actualizamos la cantidad de elementos agregados en el icono de carrito
-        let numeroCarrito = document.querySelector(".numeroCarrito");
-        numeroCarrito.innerHTML = `${itemsEnCarrito}`; 
-    }
-}
+// function actualizarIconoCarrito() {
+//     // Reseteamos el contador en el icono carrito
+//     let numeroCarrito = document.querySelector(".numeroCarrito");
+//     numeroCarrito.innerHTML = "";
+//     let itemsEnCarrito = 0;
+//     if (localStorage.getItem("carrito")) {
+//         let carrito = JSON.parse(localStorage.getItem("carrito"));
+//         for (let item of carrito) {
+//             itemsEnCarrito += item.cantidad;
+//         }
+//         // Actualizamos la cantidad de elementos agregados en el icono de carrito
+//         let numeroCarrito = document.querySelector(".numeroCarrito");
+//         numeroCarrito.innerHTML = `${itemsEnCarrito}`; 
+//     }
+// }
 
-actualizarIconoCarrito();
+// actualizarIconoCarrito();
 
 
 

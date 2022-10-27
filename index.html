@@ -57,8 +57,8 @@
 					<li><a href="./pages/portfolio.html">PORTFOLIO</a></li>
 					<li><a href="./pages/clientes.html">CLIENTES</a></li>
 					<li><a href="./pages/contacto.html">CONTACTO</a></li>
-					<li><a href="./pages/tienda.html">TIENDA</a></li>
-					<li class="li-carrito"><a href="./pages/tienda.html#carrito"><div class="carrito-icono"><img src="./img/tienda/cart.png" alt=""><p class="numeroCarrito"></p></div></a></li>
+					<!-- <li><a href="./pages/tienda.html">TIENDA</a></li> -->
+					<!-- <li class="li-carrito"><a href="./pages/tienda.html#carrito"><div class="carrito-icono"><img src="./img/tienda/cart.png" alt=""><p class="numeroCarrito"></p></div></a></li> -->
 				</ul>
 			</nav>
 			<label for="nav-toggle" class="nav-toggle-label">
@@ -71,17 +71,21 @@
 
 	<main>
 
+		<div class="whatsapp">
+			<a href="https://api.whatsapp.com/send?phone=59892488728"><img src="./img/whatsapp.png" alt=""></a>
+		</div>
+
 		<section class="portada">
 			<div class="portada__logo" id="portada__logo">
 				<a href="#bienvenida">
-					<img class="thumbnail "src="./img/logo4w.png"	>
+					<img class="logo_portada" src="./img/logo4w.png"	>
 				</a>	
 			</div>
 		</section>
 
 		<section class="bienvenida" id="bienvenida">
 			<div class="bienvenida__texto">
-				<h1><span>wrapping up..</span><br>Somos expertos<br> personalizando <br>vehículos</h1>
+				<h1 class="titulo"><span>wrapping up..</span><br>Somos expertos<br> personalizando <br>vehículos</h1>
 				<p>Querés darle un toque distintivo a tu auto o moto? Animate, contanos tu idea y hacela realidad con nosotros.</p>
 				<p>Buscás potenciar la imagen de tu empresa? Mostrá tu marca a la vez que proteges tu flota y transmitís tu identidad. Tenemos una visión vanguardista en cuanto a la exposición empresarial que te va a brindar mayor visibilidad.</p>
 				<div class="btn btn_primario"><a href="./pages/contacto.html"><h3>Contanos tu idea...</h3></a></div>
@@ -93,98 +97,77 @@
 
 		<div class="video">
 			<video autoplay muted loop>
-				<source src="./img/loop.mp4" type="video/mp4">
+				<source src="./img/loop.m4v" type="video/mp4">
 			</video>
 		</div>
 
 		<!-- Foto con el equipo y breve descripcion de los servicios -->
 
-		<div class="swiper">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port1.jpg" alt="">
-				</div>            
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port2.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port3.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port4.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port5.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port6.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port7.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port8.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port9.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port10.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port11.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port12.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port13.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port14.jpg" alt="">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/portfolio/port15.jpg" alt="">
-				</div>
-			</div>
-			<div class="swiper-pagination"></div>
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div>
-		</div>	
 		
-		<section class="opiniones">
-			<h2>QUE OPINAN NUESTROS <span>CLIENTES</span>?</h2>
-			<div class="opiniones__recuadro">
-				<div class="recuadro__arriba">
-					<p>"Les mandamos un vehículo de carga que usamos en la empresa que estaba bastante maltratado y logramos cambiarle la imagen sin necesidad de parar el vehículo muchos dias. Genios Gonzalo y su equipo."</p>	
+		<section class="galeria">
+			<h2>Porque nuestro trabajo habla solo</h2>
+			<p>Contamos con una amplia gama de tratamientos y lavados especiales para su auto, respaldados con maquinaria y productos de primera calidad, para cuidarlo con la misma dedicación que usted le daría.</p>
+
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port1.jpg" alt="">
+					</div>            
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port2.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port3.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port4.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port5.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port6.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port8.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port9.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port10.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port11.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port12.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port13.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="./img/portfolio/port15.jpg" alt="">
+					</div>
 				</div>
-				<div class="recuadro__abajo">
-					<img src="./img/clientes/cliente1.png" alt="Icono de usuario" width="80px">
-					<p class="nombre">Javier</p>
-					<p class="vehiculo">Mercedes Sprinter</p>
-				</div>
-			</div>
-			<div class="opiniones__recuadro">
-				<div class="recuadro__arriba">
-					<p>"La moto quedo divina, terminaciones muy prolijas y el color esta buenísimo, super recomendables"</p>
-				</div>
-				<div class="recuadro__abajo">
-					<img src="./img/clientes/cliente2.png" alt="Icono de usuario" width="80px">
-					<p class="nombre">Ignacio</p>
-					<p class="vehiculo">Husqvarna Vitpilen</p>
-				</div>
-			</div>
-			<div class="opiniones__recuadro">
-				<div class="recuadro__arriba">
-					<p>"Quería darla un toque distintivo al auto, los chicos en el taller me dieron una mano con el diseño y quedó tremando, le cambió las líneas completamente, es un auto nuevo."</p>
-				</div>
-				<div class="recuadro__abajo">
-					<img src="./img/clientes/cliente3.png" alt="Icono de usuario" width="80px">
-					<p class="nombre">Sofía</p>
-					<p class="vehiculo">VW Golf</p>
-				</div>
-				
-			</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>	
+		</section>
+
+		<section class="indexForm">
+			<h2>Consultanos</h2>
+			<form class="contacto__form">
+
+				<input type="email" class="email" required placeholder="Email">
+
+				<input type="phone" class="phone" required placeholder="Teléfono">
+
+				<textarea name="comentarios" class="comentarios" cols="30" rows="5" placeholder="Ingrese su consulta.." required></textarea>
+
+				<input type="submit" class="boton" name="Enviar">
+			</form>
 		</section>
 	</main>
 
@@ -211,7 +194,8 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-	<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 	<script type="module" src="./js/script.js"></script>
